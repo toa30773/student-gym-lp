@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>無料カウンセリング予約 | BODY MAKE STUDIO</title>
+  <meta name="description" content="無料カウンセリング＋体験トレーニングのご予約。勧誘一切なし・完全無料・当日予約OK。BODY MAKE STUDIOで理想のカラダを目指しましょう。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== Header ========== -->
+  <header class="header">
+    <a href="index.html" class="header__logo">BODY MAKE STUDIO</a>
+    <button class="header__hamburger js-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="header-nav">
+      <span class="header__hamburger-line"></span>
+      <span class="header__hamburger-line"></span>
+      <span class="header__hamburger-line"></span>
+    </button>
+    <nav class="header__nav js-nav" id="header-nav" aria-label="サイトナビゲーション">
+      <ul class="header__nav-list">
+        <li class="header__nav-item"><a href="index.html#reason">選ばれる理由</a></li>
+        <li class="header__nav-item"><a href="index.html#review">お客様の声</a></li>
+        <li class="header__nav-item"><a href="index.html#pricing">料金プラン</a></li>
+        <li class="header__nav-item"><a href="index.html#faq">よくある質問</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <!-- ========== Hero ========== -->
+    <section class="counseling-hero" aria-label="ページヘッド">
+      <div class="counseling-hero__badge">
+        <span class="counseling-hero__badge-text">完全無料・勧誘一切なし</span>
+      </div>
+      <h1 class="counseling-hero__title">無料カウンセリング<br>＋体験トレーニング<br>ご予約フォーム</h1>
+      <p class="counseling-hero__subtitle">
+        まずはお気軽にご相談ください。<br>
+        あなたの目標に合わせた最適なプランをご提案します。
+      </p>
+    </section>
+
+    <!-- ========== Trust Badges ========== -->
+    <section class="trust" aria-labelledby="trust-title">
+      <h2 class="u-sr-only" id="trust-title">ご安心ください</h2>
+      <ul class="trust__list">
+        <li class="trust__item">
+          <span class="trust__icon" aria-hidden="true">🎁</span>
+          <p class="trust__text">カウンセリング＋体験 完全無料</p>
+        </li>
+        <li class="trust__item">
+          <span class="trust__icon" aria-hidden="true">🚫</span>
+          <p class="trust__text">勧誘・強引な営業は一切なし</p>
+        </li>
+        <li class="trust__item">
+          <span class="trust__icon" aria-hidden="true">⚡</span>
+          <p class="trust__text">当日予約もOK</p>
+        </li>
+        <li class="trust__item">
+          <span class="trust__icon" aria-hidden="true">🔒</span>
+          <p class="trust__text">個人情報は厳重に管理</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ========== Steps ========== -->
+    <section class="steps" aria-labelledby="steps-title">
+      <h2 class="steps__title" id="steps-title">カウンセリングの流れ</h2>
+      <ol class="steps__list">
+        <li class="step">
+          <div class="step__num" aria-hidden="true">1</div>
+          <div class="step__content">
+            <p class="step__title">フォームを送信</p>
+            <p class="step__desc">希望日時・お悩みをご入力ください。</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step__num" aria-hidden="true">2</div>
+          <div class="step__content">
+            <p class="step__title">スタッフから連絡</p>
+            <p class="step__desc">1営業日以内にメールまたは電話でご連絡します。</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step__num" aria-hidden="true">3</div>
+          <div class="step__content">
+            <p class="step__title">来店・無料カウンセリング</p>
+            <p class="step__desc">約60分。体験トレーニングと目標ヒアリングを行います。</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step__num" aria-hidden="true">4</div>
+          <div class="step__content">
+            <p class="step__title">プランのご提案</p>
+            <p class="step__desc">あなたに最適なプランをご提案。その場でのご入会は任意です。</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ========== Form ========== -->
+    <section class="form-section" aria-labelledby="form-title">
+      <h2 class="form-section__title" id="form-title">予約フォームに入力する</h2>
+
+      <form class="counseling-form js-counseling-form" novalidate>
+
+        <!-- お名前 -->
+        <div class="form-group">
+          <label class="form-group__label" for="name">
+            お名前
+            <span class="form-group__required">必須</span>
+          </label>
+          <input
+            class="form-group__input"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="山田 太郎"
+            required
+            autocomplete="name"
+          >
+        </div>
+
+        <!-- メールアドレス -->
+        <div class="form-group">
+          <label class="form-group__label" for="email">
+            メールアドレス
+            <span class="form-group__required">必須</span>
+          </label>
+          <input
+            class="form-group__input"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@gmail.com"
+            required
+            autocomplete="email"
+          >
+        </div>
+
+        <!-- 電話番号 -->
+        <div class="form-group">
+          <label class="form-group__label" for="phone">
+            電話番号
+            <span class="form-group__required">必須</span>
+          </label>
+          <input
+            class="form-group__input"
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="090-1234-5678"
+            required
+            autocomplete="tel"
+          >
+          <p class="form-group__hint">確認のため、折り返しご連絡する場合があります。</p>
+        </div>
+
+        <!-- 第1希望日時 -->
+        <div class="form-group">
+          <label class="form-group__label" for="date1">
+            第1希望日時
+            <span class="form-group__required">必須</span>
+          </label>
+          <input
+            class="form-group__input"
+            type="datetime-local"
+            id="date1"
+            name="date1"
+            required
+          >
+          <p class="form-group__hint">営業時間：平日 7:00〜22:00 / 土日祝 8:00〜20:00</p>
+        </div>
+
+        <!-- 第2希望日時 -->
+        <div class="form-group">
+          <label class="form-group__label" for="date2">
+            第2希望日時
+            <span class="form-group__optional">任意</span>
+          </label>
+          <input
+            class="form-group__input"
+            type="datetime-local"
+            id="date2"
+            name="date2"
+          >
+        </div>
+
+        <!-- 第3希望日時 -->
+        <div class="form-group">
+          <label class="form-group__label" for="date3">
+            第3希望日時
+            <span class="form-group__optional">任意</span>
+          </label>
+          <input
+            class="form-group__input"
+            type="datetime-local"
+            id="date3"
+            name="date3"
+          >
+        </div>
+
+        <!-- 現在のお悩み -->
+        <div class="form-group">
+          <p class="form-group__label" id="concern-label">
+            現在のお悩み
+            <span class="form-group__optional">任意</span>
+          </p>
+          <div class="form-group__checkbox-list" role="group" aria-labelledby="concern-label">
+            <label class="form-group__checkbox-item">
+              <input class="form-group__checkbox" type="checkbox" name="concern" value="weight">
+              <span class="form-group__checkbox-label">体重を減らしたい</span>
+            </label>
+            <label class="form-group__checkbox-item">
+              <input class="form-group__checkbox" type="checkbox" name="concern" value="muscle">
+              <span class="form-group__checkbox-label">筋肉をつけたい</span>
+            </label>
+            <label class="form-group__checkbox-item">
+              <input class="form-group__checkbox" type="checkbox" name="concern" value="shape">
+              <span class="form-group__checkbox-label">体型を引き締めたい</span>
+            </label>
+            <label class="form-group__checkbox-item">
+              <input class="form-group__checkbox" type="checkbox" name="concern" value="diet">
+              <span class="form-group__checkbox-label">食事改善がしたい</span>
+            </label>
+            <label class="form-group__checkbox-item">
+              <input class="form-group__checkbox" type="checkbox" name="concern" value="health">
+              <span class="form-group__checkbox-label">健康診断の数値を改善したい</span>
+            </label>
+            <label class="form-group__checkbox-item">
+              <input class="form-group__checkbox" type="checkbox" name="concern" value="other">
+              <span class="form-group__checkbox-label">その他</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- ご質問・ご要望 -->
+        <div class="form-group">
+          <label class="form-group__label" for="message">
+            ご質問・ご要望
+            <span class="form-group__optional">任意</span>
+          </label>
+          <textarea
+            class="form-group__textarea"
+            id="message"
+            name="message"
+            placeholder="例）仕事が忙しくて週1しか通えないのですが大丈夫ですか？"
+          ></textarea>
+        </div>
+
+        <!-- プライバシーポリシー -->
+        <p class="form__privacy">
+          ご入力いただいた個人情報は、予約確認・ご連絡のみに使用し、<br>
+          第三者への提供は一切行いません。
+        </p>
+
+        <!-- 送信 -->
+        <div class="form__submit">
+          <button type="submit" class="form__submit-btn">
+            無料カウンセリングを予約する →
+          </button>
+          <p class="form__submit-note">送信後、1営業日以内にご連絡いたします</p>
+        </div>
+
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <p class="footer__logo">BODY MAKE STUDIO</p>
+    <nav class="footer__nav" aria-label="フッターナビゲーション">
+      <a href="index.html#reason" class="footer__nav-item">サービス内容</a>
+      <a href="index.html#pricing" class="footer__nav-item">料金</a>
+      <a href="index.html#faq" class="footer__nav-item">よくある質問</a>
+      <a href="counseling.html" class="footer__nav-item">お問い合わせ</a>
+    </nav>
+    <div class="footer__divider" aria-hidden="true"></div>
+    <p class="footer__copy">© 2025 BODY MAKE STUDIO All Rights Reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
