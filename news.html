@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BODY MAKE STUDIOからのお知らせ一覧。キャンペーン・営業時間・新トレーナー加入などの最新情報をお届けします。">
+  <title>お知らせ｜BODY MAKE STUDIO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header [WordPress: header.php] -->
+  <!-- Figma: 109:3 Header -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">BODY MAKE STUDIO</a>
+      <nav class="header__nav" aria-label="グローバルナビゲーション">
+        <ul class="header__nav-list">
+          <li><a href="index.html#reason" class="header__nav-link">特徴</a></li>
+          <li><a href="index.html#pricing" class="header__nav-link">料金</a></li>
+          <li><a href="index.html#faq" class="header__nav-link">よくある質問</a></li>
+          <li><a href="index.html#access" class="header__nav-link">アクセス</a></li>
+        </ul>
+      </nav>
+      <a href="counseling.html" class="header__cta">無料体験予約</a>
+      <button type="button" class="header__menu-btn js-menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawerMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="header__drawer js-drawer" id="drawerMenu">
+      <ul class="header__drawer-list">
+        <li><a href="index.html#reason" class="header__drawer-link">特徴</a></li>
+        <li><a href="index.html#pricing" class="header__drawer-link">料金</a></li>
+        <li><a href="index.html#faq" class="header__drawer-link">よくある質問</a></li>
+        <li><a href="index.html#access" class="header__drawer-link">アクセス</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page Hero (Breadcrumb + Title) -->
+    <!-- Figma: 109:13 Page-Hero -->
+    <!-- WordPress化: パンくずは breadcrumb_trail() / Yoast SEO -->
+    <section class="news-page-hero">
+      <div class="news-page-hero__inner">
+        <nav class="news-page-hero__breadcrumb" aria-label="パンくずリスト">
+          <a href="index.html" class="news-page-hero__breadcrumb-link">TOP</a>
+          <span aria-hidden="true">&gt;</span>
+          <span>お知らせ</span>
+        </nav>
+        <div class="news-page-hero__title-row">
+          <h1 class="news-page-hero__title">お知らせ</h1>
+          <span class="news-page-hero__label">NEWS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Filter -->
+    <!-- Figma: 109:20 Category-Filter -->
+    <!-- WordPress化: wp_list_categories() / カスタムタクソノミー -->
+    <nav class="news-filter" aria-label="カテゴリーフィルター">
+      <div class="news-filter__inner">
+        <button type="button" class="news-filter__btn news-filter__btn--active js-news-filter" data-category="all">すべて</button>
+        <button type="button" class="news-filter__btn news-filter__btn--campaign js-news-filter" data-category="campaign">キャンペーン</button>
+        <button type="button" class="news-filter__btn news-filter__btn--info js-news-filter" data-category="info">お知らせ</button>
+        <button type="button" class="news-filter__btn news-filter__btn--new js-news-filter" data-category="new">新着情報</button>
+      </div>
+    </nav>
+
+    <!-- Post Grid -->
+    <!-- Figma: 110:2 Post-Grid -->
+    <!-- WordPress化: WP_Query loop - <?php while(have_posts()): the_post(); ?> -->
+    <section class="news-archive">
+      <div class="news-archive__inner">
+        <ul class="news-archive__grid">
+          <!-- Post 1 -->
+          <li class="news-archive__card js-news-card" data-category="campaign">
+            <a href="#">
+              <div class="news-archive__thumb">アイキャッチ画像</div>
+              <div class="news-archive__body">
+                <div class="news-archive__meta">
+                  <time class="news-archive__date" datetime="2026-05-01">2026.05.01</time>
+                  <span class="news-archive__category news-archive__category--campaign">キャンペーン</span>
+                </div>
+                <h2 class="news-archive__title">5月限定！入会金0円キャンペーン実施中</h2>
+                <p class="news-archive__excerpt">今月ご入会の方は入会金30,000円が無料になるキャンペーンを実施中です。この機会にぜひご利用ください。</p>
+                <span class="news-archive__more">続きを読む →</span>
+              </div>
+            </a>
+          </li>
+          <!-- Post 2 -->
+          <li class="news-archive__card js-news-card" data-category="info">
+            <a href="#">
+              <div class="news-archive__thumb">アイキャッチ画像</div>
+              <div class="news-archive__body">
+                <div class="news-archive__meta">
+                  <time class="news-archive__date" datetime="2026-04-15">2026.04.15</time>
+                  <span class="news-archive__category news-archive__category--info">お知らせ</span>
+                </div>
+                <h2 class="news-archive__title">GW期間中の営業時間についてのご案内</h2>
+                <p class="news-archive__excerpt">ゴールデンウィーク期間（4/29〜5/6）中の営業時間をお知らせいたします。通常と異なりますのでご注意ください。</p>
+                <span class="news-archive__more">続きを読む →</span>
+              </div>
+            </a>
+          </li>
+          <!-- Post 3 -->
+          <li class="news-archive__card js-news-card" data-category="new">
+            <a href="#">
+              <div class="news-archive__thumb">アイキャッチ画像</div>
+              <div class="news-archive__body">
+                <div class="news-archive__meta">
+                  <time class="news-archive__date" datetime="2026-04-01">2026.04.01</time>
+                  <span class="news-archive__category news-archive__category--new">新着情報</span>
+                </div>
+                <h2 class="news-archive__title">新トレーナー加入のお知らせ</h2>
+                <p class="news-archive__excerpt">この度、新しいパーソナルトレーナーが加入しました。専門はボディメイクと栄養指導です。ぜひご指名ください。</p>
+                <span class="news-archive__more">続きを読む →</span>
+              </div>
+            </a>
+          </li>
+          <!-- Post 4 -->
+          <li class="news-archive__card js-news-card" data-category="campaign">
+            <a href="#">
+              <div class="news-archive__thumb">アイキャッチ画像</div>
+              <div class="news-archive__body">
+                <div class="news-archive__meta">
+                  <time class="news-archive__date" datetime="2026-03-20">2026.03.20</time>
+                  <span class="news-archive__category news-archive__category--campaign">キャンペーン</span>
+                </div>
+                <h2 class="news-archive__title">春の体験キャンペーン！3月末まで体験無料</h2>
+                <p class="news-archive__excerpt">春に向けてボディメイクを始めませんか？3月末まで体験トレーニングが無料でご利用いただけます。</p>
+                <span class="news-archive__more">続きを読む →</span>
+              </div>
+            </a>
+          </li>
+          <!-- Post 5 -->
+          <li class="news-archive__card js-news-card" data-category="info">
+            <a href="#">
+              <div class="news-archive__thumb">アイキャッチ画像</div>
+              <div class="news-archive__body">
+                <div class="news-archive__meta">
+                  <time class="news-archive__date" datetime="2026-03-01">2026.03.01</time>
+                  <span class="news-archive__category news-archive__category--info">お知らせ</span>
+                </div>
+                <h2 class="news-archive__title">設備リニューアルのお知らせ</h2>
+                <p class="news-archive__excerpt">トレーニングマシンの増設と更新が完了しました。より充実した環境でトレーニングをお楽しみください。</p>
+                <span class="news-archive__more">続きを読む →</span>
+              </div>
+            </a>
+          </li>
+          <!-- Post 6 -->
+          <li class="news-archive__card js-news-card" data-category="new">
+            <a href="#">
+              <div class="news-archive__thumb">アイキャッチ画像</div>
+              <div class="news-archive__body">
+                <div class="news-archive__meta">
+                  <time class="news-archive__date" datetime="2026-02-14">2026.02.14</time>
+                  <span class="news-archive__category news-archive__category--new">新着情報</span>
+                </div>
+                <h2 class="news-archive__title">会員様向けLINEグループ開設のお知らせ</h2>
+                <p class="news-archive__excerpt">会員様同士のコミュニティ活性化のため、LINEオープングループを開設しました。ぜひご参加ください。</p>
+                <span class="news-archive__more">続きを読む →</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Pagination -->
+    <!-- Figma: 111:2 Pagination -->
+    <!-- WordPress化: paginate_links() / the_posts_pagination() -->
+    <nav class="news-pagination" aria-label="ページネーション">
+      <a href="#" class="news-pagination__item" aria-label="前のページ">←</a>
+      <a href="#" class="news-pagination__item news-pagination__item--active" aria-current="page">1</a>
+      <a href="#" class="news-pagination__item">2</a>
+      <a href="#" class="news-pagination__item">3</a>
+      <a href="#" class="news-pagination__item" aria-label="次のページ">→</a>
+    </nav>
+
+  </main>
+
+  <!-- Footer [WordPress: footer.php] -->
+  <!-- Figma: 111:13 Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <a href="index.html" class="footer__logo">BODY MAKE STUDIO</a>
+        <nav aria-label="フッターナビゲーション">
+          <ul class="footer__nav-list">
+            <li><a href="#" class="footer__nav-link">プライバシーポリシー</a></li>
+            <li><a href="#" class="footer__nav-link">特定商取引法に基づく表記</a></li>
+            <li><a href="#" class="footer__nav-link">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__divider"></div>
+      <p class="footer__copyright">© 2026 BODY MAKE STUDIO. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

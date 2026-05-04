@@ -3,514 +3,598 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BODY MAKE STUDIO | パーソナルジム – 最短2ヶ月で理想のカラダへ</title>
-  <meta name="description" content="初心者専門・完全個室パーソナルジム。最短2ヶ月で理想のカラダへ。専属トレーナー制・食事指導付き・手ぶらでOK。無料カウンセリング実施中。">
+  <meta name="description" content="BODY MAKE STUDIO｜初心者専門・完全個室・食事指導付きのパーソナルジム。最短2ヶ月で理想のカラダへ。今月入会金0円キャンペーン実施中。">
+  <title>BODY MAKE STUDIO｜最短2ヶ月で、理想のカラダへ。</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ========== Header ========== -->
+  <!-- ============== Header ============== -->
+  <!-- Figma: 15:2 Header -->
   <header class="header">
-    <p class="header__logo">BODY MAKE STUDIO</p>
-    <button class="header__hamburger js-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="header-nav">
-      <span class="header__hamburger-line"></span>
-      <span class="header__hamburger-line"></span>
-      <span class="header__hamburger-line"></span>
-    </button>
-    <nav class="header__nav js-nav" id="header-nav" aria-label="サイトナビゲーション">
-      <ul class="header__nav-list">
-        <li class="header__nav-item"><a href="#reason">選ばれる理由</a></li>
-        <li class="header__nav-item"><a href="#review">お客様の声</a></li>
-        <li class="header__nav-item"><a href="#pricing">料金プラン</a></li>
-        <li class="header__nav-item"><a href="#faq">よくある質問</a></li>
-        <li class="header__nav-item"><a href="counseling.html">無料相談</a></li>
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">BODY MAKE STUDIO</a>
+      <nav class="header__nav" aria-label="グローバルナビゲーション">
+        <ul class="header__nav-list">
+          <li><a href="#reason" class="header__nav-link">特徴</a></li>
+          <li><a href="#pricing" class="header__nav-link">料金</a></li>
+          <li><a href="#faq" class="header__nav-link">よくある質問</a></li>
+          <li><a href="#access" class="header__nav-link">アクセス</a></li>
+        </ul>
+      </nav>
+      <a href="counseling.html" class="header__cta">無料体験予約</a>
+      <button type="button" class="header__menu-btn js-menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="header__drawer js-drawer" id="drawerMenu">
+      <ul class="header__drawer-list">
+        <li><a href="#reason" class="header__drawer-link">特徴</a></li>
+        <li><a href="#pricing" class="header__drawer-link">料金</a></li>
+        <li><a href="#faq" class="header__drawer-link">よくある質問</a></li>
+        <li><a href="#access" class="header__drawer-link">アクセス</a></li>
+        <li><a href="news.html" class="header__drawer-link">お知らせ</a></li>
+        <li><a href="counseling.html" class="header__drawer-link">無料体験予約</a></li>
       </ul>
-    </nav>
+    </div>
   </header>
 
-  <main class="main">
+  <main>
 
-    <!-- ========== Section 01: Hero ========== -->
-    <section class="hero" aria-label="ファーストビュー">
-      <div class="hero__bg hero__bg--placeholder" role="img" aria-label="トレーニング風景"></div>
-      <div class="hero__overlay" aria-hidden="true"></div>
-      <p class="hero__badge">
-        <span class="hero__badge-text">今月限定：入会金0円＋初回体験無料</span>
-      </p>
-      <h1 class="hero__title">最短2ヶ月で、<br>理想のカラダへ。</h1>
-      <p class="hero__subtitle">初心者専門・完全個室・食事指導付き<br>だから無理なく続く。</p>
-    </section>
-
-    <!-- Hero CTA Block -->
-    <div class="hero-cta">
-      <ul class="hero-cta__tags" aria-label="当ジムの特徴">
-        <li class="hero-cta__tag">✓ 手ぶらでOK</li>
-        <li class="hero-cta__tag">✓ 駅近徒歩3分</li>
-        <li class="hero-cta__tag">✓ 専属トレーナー制</li>
-      </ul>
-      <a href="counseling.html" class="hero-cta__btn">無料カウンセリングはこちら →</a>
-      <p class="hero-cta__note">初回カウンセリング＋体験トレーニング 完全無料</p>
-    </div>
-
-    <!-- ========== Section 02: 悩み訴求 ========== -->
-    <section class="pain" id="pain" aria-labelledby="pain-title">
-      <div class="section-head">
-        <div class="section-head__bar" aria-hidden="true"></div>
-        <h2 class="section-head__title" id="pain-title">こんなお悩みありませんか？</h2>
-        <p class="section-head__subtitle">多くの方が同じ壁にぶつかっています</p>
-      </div>
-      <ul class="pain__cards">
-        <li class="pain-card">
-          <span class="pain-card__emoji" aria-hidden="true">😩</span>
-          <p class="pain-card__text">ダイエットが<br>続かない</p>
-        </li>
-        <li class="pain-card">
-          <span class="pain-card__emoji" aria-hidden="true">🤷</span>
-          <p class="pain-card__text">自己流では<br>結果が出ない</p>
-        </li>
-        <li class="pain-card">
-          <span class="pain-card__emoji" aria-hidden="true">😰</span>
-          <p class="pain-card__text">ジムに行っても<br>何をすればいいかわからない</p>
-        </li>
-        <li class="pain-card">
-          <span class="pain-card__emoji" aria-hidden="true">👀</span>
-          <p class="pain-card__text">人目が気になって<br>通いづらい</p>
-        </li>
-      </ul>
-      <p class="pain__conclusion">その悩み、私たちが解決します。</p>
-    </section>
-
-    <!-- ========== Section 03: 選ばれる理由 ========== -->
-    <section class="reason" id="reason" aria-labelledby="reason-title">
-      <div class="section-head">
-        <div class="section-head__bar" aria-hidden="true"></div>
-        <h2 class="section-head__title" id="reason-title">BODY MAKE STUDIOが<br>選ばれる5つの理由</h2>
-      </div>
-      <ol class="reason__cards">
-        <li class="reason-card">
-          <div class="reason-card__num" aria-hidden="true">
-            <span class="reason-card__num-text">01</span>
-          </div>
-          <div class="reason-card__content">
-            <h3 class="reason-card__title">完全個室で人目が気にならない</h3>
-            <p class="reason-card__desc">周りの目を気にせず、自分のペースでトレーニングに集中できる環境。</p>
-          </div>
-        </li>
-        <li class="reason-card">
-          <div class="reason-card__num" aria-hidden="true">
-            <span class="reason-card__num-text">02</span>
-          </div>
-          <div class="reason-card__content">
-            <h3 class="reason-card__title">駅近徒歩3分</h3>
-            <p class="reason-card__desc">仕事帰りやちょっとした隙間時間にもサッと通える好立地。</p>
-          </div>
-        </li>
-        <li class="reason-card">
-          <div class="reason-card__num" aria-hidden="true">
-            <span class="reason-card__num-text">03</span>
-          </div>
-          <div class="reason-card__content">
-            <h3 class="reason-card__title">専属トレーナー制</h3>
-            <p class="reason-card__desc">毎回同じトレーナーがあなたの変化を管理。途中で変更なし。</p>
-          </div>
-        </li>
-        <li class="reason-card">
-          <div class="reason-card__num" aria-hidden="true">
-            <span class="reason-card__num-text">04</span>
-          </div>
-          <div class="reason-card__content">
-            <h3 class="reason-card__title">食事指導・LINEサポート付き</h3>
-            <p class="reason-card__desc">トレーニング以外の時間もサポート。食事改善で効果を最大化。</p>
-          </div>
-        </li>
-        <li class="reason-card">
-          <div class="reason-card__num" aria-hidden="true">
-            <span class="reason-card__num-text">05</span>
-          </div>
-          <div class="reason-card__content">
-            <h3 class="reason-card__title">手ぶらでOK</h3>
-            <p class="reason-card__desc">ウェア・タオル・水すべて無料提供。仕事帰りにそのまま来てOK。</p>
-          </div>
-        </li>
-      </ol>
-      <div class="reason__photos" aria-label="店内写真">
-        <div class="reason__photo" role="img" aria-label="トレーニングルーム1"></div>
-        <div class="reason__photo" role="img" aria-label="トレーニングルーム2"></div>
-        <div class="reason__photo" role="img" aria-label="トレーニングルーム3"></div>
-      </div>
-    </section>
-
-    <!-- ========== Section 04: ビフォーアフター ========== -->
-    <section class="ba" id="before-after" aria-labelledby="ba-title">
-      <div class="section-head">
-        <div class="section-head__bar" aria-hidden="true"></div>
-        <h2 class="section-head__title" id="ba-title">お客様の<br>ビフォーアフター</h2>
-        <p class="section-head__subtitle">平均2ヶ月でご実感いただいています</p>
-      </div>
-      <ul class="ba__cards">
-        <li class="ba-card">
-          <div class="ba-card__images">
-            <div class="ba-card__side">
-              <div class="ba-card__img-placeholder" role="img" aria-label="山田さん Before"></div>
-              <p class="ba-card__label ba-card__label--before">BEFORE</p>
-            </div>
-            <div class="ba-card__side">
-              <div class="ba-card__img-placeholder" role="img" aria-label="山田さん After"></div>
-              <p class="ba-card__label ba-card__label--after">AFTER</p>
-            </div>
-          </div>
-          <div class="ba-card__info">
-            <p class="ba-card__result">体重 -12kg / 体脂肪率 -8%</p>
-            <p class="ba-card__name">山田 太郎さん（35歳・会社員）</p>
-            <p class="ba-card__course">3ヶ月本格改善コース</p>
-          </div>
-        </li>
-        <li class="ba-card">
-          <div class="ba-card__images">
-            <div class="ba-card__side">
-              <div class="ba-card__img-placeholder" role="img" aria-label="鈴木さん Before"></div>
-              <p class="ba-card__label ba-card__label--before">BEFORE</p>
-            </div>
-            <div class="ba-card__side">
-              <div class="ba-card__img-placeholder" role="img" aria-label="鈴木さん After"></div>
-              <p class="ba-card__label ba-card__label--after">AFTER</p>
-            </div>
-          </div>
-          <div class="ba-card__info">
-            <p class="ba-card__result">体重 -8kg / ウエスト -11cm</p>
-            <p class="ba-card__name">鈴木 花子さん（28歳・OL）</p>
-            <p class="ba-card__course">2ヶ月集中コース</p>
-          </div>
-        </li>
-        <li class="ba-card">
-          <div class="ba-card__images">
-            <div class="ba-card__side">
-              <div class="ba-card__img-placeholder" role="img" aria-label="佐藤さん Before"></div>
-              <p class="ba-card__label ba-card__label--before">BEFORE</p>
-            </div>
-            <div class="ba-card__side">
-              <div class="ba-card__img-placeholder" role="img" aria-label="佐藤さん After"></div>
-              <p class="ba-card__label ba-card__label--after">AFTER</p>
-            </div>
-          </div>
-          <div class="ba-card__info">
-            <p class="ba-card__result">体重 -9kg / 筋肉量 +3kg</p>
-            <p class="ba-card__name">佐藤 健太さん（42歳・管理職）</p>
-            <p class="ba-card__course">月額継続プラン 4ヶ月</p>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- ========== Section 05: お客様の声 ========== -->
-    <section class="review" id="review" aria-labelledby="review-title">
-      <div class="section-head">
-        <div class="section-head__bar" aria-hidden="true"></div>
-        <h2 class="section-head__title" id="review-title">お客様の声</h2>
-        <p class="section-head__subtitle">実際にご利用いただいた方の生の声</p>
-      </div>
-      <ul class="review__cards">
-        <li class="review-card">
-          <div class="review-card__author">
-            <div class="review-card__avatar" role="img" aria-label="山田さんのアバター"></div>
-            <div class="review-card__name-col">
-              <p class="review-card__name">山田 太郎さん（35歳）</p>
-              <p class="review-card__stars" aria-label="評価5つ星">★★★★★</p>
-            </div>
-          </div>
-          <p class="review-card__text">自己流でまったく結果が出なかったのに、わずか2ヶ月でスーツがブカブカになりました。トレーナーさんの指導が的確で、食事も無理なく改善できました。</p>
-        </li>
-        <li class="review-card">
-          <div class="review-card__author">
-            <div class="review-card__avatar" role="img" aria-label="鈴木さんのアバター"></div>
-            <div class="review-card__name-col">
-              <p class="review-card__name">鈴木 花子さん（28歳）</p>
-              <p class="review-card__stars" aria-label="評価5つ星">★★★★★</p>
-            </div>
-          </div>
-          <p class="review-card__text">完全個室なので人目を気にせず通えるのが最高です。結婚式に向けて理想の体型になれました。LINEでの質問対応も迅速で助かりました。</p>
-        </li>
-        <li class="review-card">
-          <div class="review-card__author">
-            <div class="review-card__avatar" role="img" aria-label="佐藤さんのアバター"></div>
-            <div class="review-card__name-col">
-              <p class="review-card__name">佐藤 健太さん（42歳）</p>
-              <p class="review-card__stars" aria-label="評価5つ星">★★★★★</p>
-            </div>
-          </div>
-          <p class="review-card__text">続かないと思っていたジム通いが、専属トレーナーがいることで楽しく続けられています。健康診断の数値も大幅に改善されました。</p>
-        </li>
-      </ul>
-    </section>
-
-    <!-- ========== Section 06: トレーナー紹介 ========== -->
-    <section class="trainer" id="trainer" aria-labelledby="trainer-title">
-      <div class="section-head">
-        <div class="section-head__bar" aria-hidden="true"></div>
-        <h2 class="section-head__title" id="trainer-title">専属トレーナー紹介</h2>
-        <p class="section-head__subtitle">あなたに寄り添うプロフェッショナル</p>
-      </div>
-      <div class="trainer-card">
-        <div class="trainer-card__photo" role="img" aria-label="チーフトレーナー田中誠一の写真"></div>
-        <div class="trainer-card__info">
-          <p class="trainer-card__role">チーフトレーナー</p>
-          <p class="trainer-card__name">田中 誠一</p>
-          <p class="trainer-card__bio">NSCA認定パーソナルトレーナー資格保有。10年以上の指導実績を持ち、延べ500名以上の体型改善をサポート。「無理なく、楽しく、確実に」をモットーに、あなたの目標達成をトータルサポートします。</p>
-          <div class="trainer-card__badges">
-            <span class="trainer-card__badge">NSCA認定</span>
-            <span class="trainer-card__badge">指導歴10年+</span>
-            <span class="trainer-card__badge">500名以上サポート</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== Section 07: 料金プラン ========== -->
-    <section class="pricing" id="pricing" aria-labelledby="pricing-title">
-      <div class="section-head">
-        <div class="section-head__bar" aria-hidden="true"></div>
-        <h2 class="section-head__title" id="pricing-title">料金プラン</h2>
-        <p class="section-head__subtitle" style="color: var(--color-accent); font-weight: 700;">入会金0円キャンペーン実施中！</p>
-      </div>
-      <div class="pricing__plans">
-
-        <article class="plan-card">
-          <h3 class="plan-card__title">2ヶ月集中コース</h3>
-          <div class="plan-card__price-row">
-            <p class="plan-card__price">¥98,000</p>
-            <p class="plan-card__price-note">（税込）</p>
-          </div>
-          <div class="plan-card__divider" aria-hidden="true"></div>
-          <ul class="plan-card__features">
-            <li class="plan-card__feature">
-              <span class="plan-card__feature-check" aria-hidden="true">✓</span>
-              <span class="plan-card__feature-text">週2回トレーニング</span>
-            </li>
-            <li class="plan-card__feature">
-              <span class="plan-card__feature-check" aria-hidden="true">✓</span>
-              <span class="plan-card__feature-text">食事指導付き</span>
-            </li>
-            <li class="plan-card__feature">
-              <span class="plan-card__feature-check" aria-hidden="true">✓</span>
-              <span class="plan-card__feature-text">LINEサポート</span>
-            </li>
-            <li class="plan-card__feature">
-              <span class="plan-card__feature-check" aria-hidden="true">✓</span>
-              <span class="plan-card__feature-text">体組成チェック</span>
-            </li>
+    <!-- ============== Hero / FV ============== -->
+    <!-- Figma: 16:2 Section-01 ファーストビュー -->
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <span class="hero__badge">今月限定：入会金0円＋初回体験無料</span>
+          <h1 class="hero__title">最短2ヶ月で、<br>理想のカラダへ。</h1>
+          <p class="hero__lead">初心者専門・完全個室・食事指導付き<br>だから無理なく続く。</p>
+          <ul class="hero__features">
+            <li class="hero__feature">✓ 手ぶらでOK</li>
+            <li class="hero__feature">✓ 駅近徒歩3分</li>
+            <li class="hero__feature">✓ 専属トレーナー制</li>
           </ul>
-        </article>
+          <a href="counseling.html" class="c-btn c-btn--primary c-btn--xl hero__cta">無料カウンセリングはこちら →</a>
+          <p class="hero__note">初回カウンセリング＋体験トレーニング 完全無料</p>
+        </div>
+        <div class="hero__image">
+          <img src="img/hero-top.png" alt="BODY MAKE STUDIO トレーニングジム">
+        </div>
+      </div>
+    </section>
 
-        <article class="plan-card plan-card--popular">
-          <div class="plan-card__popular-badge" aria-label="人気No.1プラン">
-            <p class="plan-card__popular-badge-text">⭐ 人気No.1</p>
+    <!-- ============== News (preview) ============== -->
+    <!-- Figma: 101:2 Section-News [WordPress: カスタム投稿] -->
+    <section class="news" id="news">
+      <div class="news__inner">
+        <div class="c-heading news__heading">
+          <span class="c-heading__label">NEWS</span>
+          <h2 class="c-heading__title">お知らせ</h2>
+        </div>
+        <!-- WordPress化時：WP_Query で投稿ループ -->
+        <ul class="news__list">
+          <li>
+            <a href="news.html" class="news__item">
+              <div class="news__meta">
+                <time class="news__date" datetime="2026-05-01">2026.05.01</time>
+                <span class="news__category news__category--campaign">キャンペーン</span>
+              </div>
+              <p class="news__title">5月限定！入会金0円キャンペーン実施中</p>
+            </a>
+          </li>
+          <li>
+            <a href="news.html" class="news__item">
+              <div class="news__meta">
+                <time class="news__date" datetime="2026-04-15">2026.04.15</time>
+                <span class="news__category news__category--info">お知らせ</span>
+              </div>
+              <p class="news__title">GW期間中の営業時間についてのご案内</p>
+            </a>
+          </li>
+          <li>
+            <a href="news.html" class="news__item">
+              <div class="news__meta">
+                <time class="news__date" datetime="2026-04-01">2026.04.01</time>
+                <span class="news__category news__category--new">新着情報</span>
+              </div>
+              <p class="news__title">新トレーナー加入のお知らせ</p>
+            </a>
+          </li>
+        </ul>
+        <a href="news.html" class="news__more">お知らせ一覧を見る →</a>
+      </div>
+    </section>
+
+    <!-- ============== Pain Points ============== -->
+    <!-- Figma: 17:2 Section-02 悩み訴求 -->
+    <section class="pain l-section" id="pain">
+      <div class="pain__inner">
+        <div class="c-heading">
+          <span class="c-heading__label">PAIN POINTS</span>
+          <h2 class="c-heading__title">こんなお悩みありませんか？</h2>
+          <p class="c-heading__sub">その悩み、私たちが解決します。</p>
+        </div>
+        <ul class="pain__grid">
+          <li class="pain__card">
+            <span class="pain__icon" aria-hidden="true">😩</span>
+            <h3 class="pain__title">ダイエットが続かない</h3>
+            <p class="pain__text">自己流では三日坊主になりがち。<br>専属トレーナーが伴走します。</p>
+          </li>
+          <li class="pain__card">
+            <span class="pain__icon" aria-hidden="true">❓</span>
+            <h3 class="pain__title">何をすればいいかわからない</h3>
+            <p class="pain__text">ジムに行っても迷子になる。<br>初回から完全オーダーメイドで対応。</p>
+          </li>
+          <li class="pain__card">
+            <span class="pain__icon" aria-hidden="true">👀</span>
+            <h3 class="pain__title">人目が気になって通いづらい</h3>
+            <p class="pain__text">完全個室だから初心者でも安心。<br>人の目を気にせずトレーニング。</p>
+          </li>
+          <li class="pain__card">
+            <span class="pain__icon" aria-hidden="true">📉</span>
+            <h3 class="pain__title">自己流で結果が出ない</h3>
+            <p class="pain__text">間違ったフォームや食事制限は逆効果。<br>プロが科学的にサポート。</p>
+          </li>
+        </ul>
+        <div class="pain__cta">
+          <a href="counseling.html" class="c-btn c-btn--primary c-btn--lg">まずは無料体験を予約する →</a>
+          <p class="pain__cta-note">完全無料・当日のお申込みOK</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== Reasons ============== -->
+    <!-- Figma: 18:2 Section-03 選ばれる理由 -->
+    <section class="reason l-section" id="reason">
+      <div class="reason__inner">
+        <div class="c-heading">
+          <span class="c-heading__label">WHY CHOOSE US</span>
+          <h2 class="c-heading__title">このジムが選ばれる5つの理由</h2>
+          <p class="c-heading__sub">初心者でも安心して通い続けられる仕組みがあります。</p>
+        </div>
+        <ul class="reason__grid">
+          <li class="reason__card">
+            <span class="reason__num">01</span>
+            <h3 class="reason__title">完全個室でトレーニング</h3>
+            <p class="reason__text">他のお客様と顔を合わせることなく、マンツーマンでトレーニング。初心者でも恥ずかしくない環境を提供しています。</p>
+          </li>
+          <li class="reason__card">
+            <span class="reason__num">02</span>
+            <h3 class="reason__title">専属トレーナー制</h3>
+            <p class="reason__text">担当トレーナーが変わることなく、あなたの進捗を一貫してサポート。信頼関係を築きながら続けられます。</p>
+          </li>
+          <li class="reason__card">
+            <span class="reason__num">03</span>
+            <h3 class="reason__title">食事指導＆LINEサポート</h3>
+            <p class="reason__text">週1回のトレーニングだけでなく、毎日の食事もLINEで管理。食事制限なしで美味しく痩せられます。</p>
+          </li>
+        </ul>
+        <ul class="reason__grid reason__grid--2col">
+          <li class="reason__card">
+            <span class="reason__num">04</span>
+            <h3 class="reason__title">手ぶらでOK・駅近3分</h3>
+            <p class="reason__text">ウェア・タオル・水はすべて無料提供。最寄り駅から徒歩3分なので、仕事帰りにも立ち寄りやすい。</p>
+          </li>
+          <li class="reason__card">
+            <span class="reason__num">05</span>
+            <h3 class="reason__title">初心者特化・無理な勧誘なし</h3>
+            <p class="reason__text">高額オプションの押し売りは一切なし。初めてジムに通う方が安心して相談できる環境を大切にしています。</p>
+          </li>
+        </ul>
+        <ul class="reason__photos">
+          <li class="reason__photo">
+            <img src="img/feature-training.png" alt="トレーニング風景">
+            <div class="reason__photo-label"><span class="reason__photo-label-text">トレーニング風景</span></div>
+          </li>
+          <li class="reason__photo">
+            <img src="img/feature-private.png" alt="完全個室スペース">
+            <div class="reason__photo-label"><span class="reason__photo-label-text">完全個室スペース</span></div>
+          </li>
+          <li class="reason__photo">
+            <img src="img/feature-interior.png" alt="清潔感ある内装">
+            <div class="reason__photo-label"><span class="reason__photo-label-text">清潔感ある内装</span></div>
+          </li>
+        </ul>
+        <div class="reason__cta">
+          <a href="counseling.html" class="c-btn c-btn--primary c-btn--lg">無料カウンセリングを予約する →</a>
+          <p class="reason__cta-note">今月入会で入会金30,000円 → 0円キャンペーン中！</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== Before / After ============== -->
+    <!-- Figma: 19:2 Section-04 ビフォーアフター -->
+    <section class="ba l-section" id="results">
+      <div class="ba__inner">
+        <div class="c-heading">
+          <span class="c-heading__label">RESULTS</span>
+          <h2 class="c-heading__title">実際の変化をご覧ください</h2>
+          <p class="c-heading__sub">2ヶ月で見た目が変わった実績多数。写真で結果をお確かめください。</p>
+        </div>
+        <ul class="ba__grid">
+          <li class="ba__item">
+            <div class="ba__pair">
+              <div class="ba__col">
+                <span class="ba__label ba__label--before">BEFORE</span>
+                <div class="ba__photo" aria-label="Before写真"></div>
+              </div>
+              <div class="ba__col">
+                <span class="ba__label ba__label--after">AFTER</span>
+                <div class="ba__photo">
+                  <img src="img/ba-after-1.png" alt="2ヶ月後の体型変化">
+                </div>
+              </div>
+            </div>
+            <p class="ba__meta">28歳・男性 / 2ヶ月で達成</p>
+            <div class="ba__result">
+              <p class="ba__weight">-8kg</p>
+              <p class="ba__fat">体脂肪率 -6%</p>
+            </div>
+          </li>
+          <li class="ba__item">
+            <div class="ba__pair">
+              <div class="ba__col">
+                <span class="ba__label ba__label--before">BEFORE</span>
+                <div class="ba__photo" aria-label="Before写真"></div>
+              </div>
+              <div class="ba__col">
+                <span class="ba__label ba__label--after">AFTER</span>
+                <div class="ba__photo">
+                  <img src="img/ba-after-2.png" alt="3ヶ月後の体型変化">
+                </div>
+              </div>
+            </div>
+            <p class="ba__meta">34歳・女性 / 3ヶ月で達成</p>
+            <div class="ba__result">
+              <p class="ba__weight">-10kg</p>
+              <p class="ba__fat">体脂肪率 -8%</p>
+            </div>
+          </li>
+          <li class="ba__item">
+            <div class="ba__pair">
+              <div class="ba__col">
+                <span class="ba__label ba__label--before">BEFORE</span>
+                <div class="ba__photo" aria-label="Before写真"></div>
+              </div>
+              <div class="ba__col">
+                <span class="ba__label ba__label--after">AFTER</span>
+                <div class="ba__photo">
+                  <img src="img/ba-after-3.png" alt="2ヶ月後の体型変化">
+                </div>
+              </div>
+            </div>
+            <p class="ba__meta">25歳・男性 / 2ヶ月で達成</p>
+            <div class="ba__result">
+              <p class="ba__weight">-7kg</p>
+              <p class="ba__fat">体脂肪率 -5%</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============== Voice / Testimonials ============== -->
+    <!-- Figma: 20:2 Section-05 お客様の声 -->
+    <section class="voice l-section" id="voice">
+      <div class="voice__inner">
+        <div class="c-heading">
+          <span class="c-heading__label">TESTIMONIALS</span>
+          <h2 class="c-heading__title">お客様の声</h2>
+          <p class="c-heading__sub">通い始めた方々のリアルな声をお届けします。</p>
+        </div>
+        <ul class="voice__grid">
+          <li class="voice__card">
+            <div class="voice__stars" aria-label="5つ星評価">★★★★★</div>
+            <p class="voice__text">「仕事帰りに気軽に通えるのが最高です。個室なので最初の緊張もすぐなくなりました。2ヶ月でスーツのサイズが変わって自信がつきました！」</p>
+            <span class="voice__badge">2ヶ月で-6kg達成</span>
+            <div class="voice__person">
+              <div class="voice__avatar"><img src="img/avatar-1.png" alt=""></div>
+              <div>
+                <p class="voice__name">田中 K</p>
+                <p class="voice__profile">28歳・会社員</p>
+              </div>
+            </div>
+          </li>
+          <li class="voice__card">
+            <div class="voice__stars" aria-label="5つ星評価">★★★★★</div>
+            <p class="voice__text">「食事制限なしで痩せられると聞いて半信半疑でしたが、3ヶ月で体脂肪率が8%も落ちました。トレーナーさんが毎日LINEで応援してくれて続けられました。」</p>
+            <span class="voice__badge">3ヶ月で-10kg達成</span>
+            <div class="voice__person">
+              <div class="voice__avatar"><img src="img/avatar-2.png" alt=""></div>
+              <div>
+                <p class="voice__name">佐藤 M</p>
+                <p class="voice__profile">32歳・主婦</p>
+              </div>
+            </div>
+          </li>
+          <li class="voice__card">
+            <div class="voice__stars" aria-label="5つ星評価">★★★★★</div>
+            <p class="voice__text">「初めてジムに行ったのですが、何も知らない状態から丁寧に教えてもらえました。勧誘も全くなくて安心して通えています。」</p>
+            <span class="voice__badge">2ヶ月で-7kg達成</span>
+            <div class="voice__person">
+              <div class="voice__avatar"><img src="img/avatar-3.png" alt=""></div>
+              <div>
+                <p class="voice__name">鈴木 T</p>
+                <p class="voice__profile">25歳・学生</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============== Trainer ============== -->
+    <!-- Figma: 20:56 Section-06 トレーナー紹介 -->
+    <section class="trainer l-section" id="trainer">
+      <div class="trainer__inner">
+        <div class="trainer__photo-wrap">
+          <div class="trainer__photo">
+            <img src="img/trainer.png" alt="トレーナー 田中翔太">
           </div>
-          <h3 class="plan-card__title">3ヶ月本格改善コース</h3>
-          <div class="plan-card__price-row">
-            <p class="plan-card__price">¥148,000</p>
-            <p class="plan-card__price-note">（税込）</p>
-          </div>
-          <div class="plan-card__divider" aria-hidden="true"></div>
-          <ul class="plan-card__features">
-            <li class="plan-card__feature">
-              <span class="plan-card__feature-check" aria-hidden="true">✓</span>
-              <span class="plan-card__feature-text">週2〜3回トレーニング</span>
-            </li>
-            <li class="plan-card__feature">
-              <span class="plan-card__feature-check" aria-hidden="true">✓</span>
-              <span class="plan-card__feature-text">食事指導付き</span>
-            </li>
-            <li class="plan-card__feature">
-              <span class="plan-card__feature-check" aria-hidden="true">✓</span>
-              <span class="plan-card__feature-text">LINEサポート24時間</span>
-            </li>
-            <li class="plan-card__feature">
-              <span class="plan-card__feature-check" aria-hidden="true">✓</span>
-              <span class="plan-card__feature-text">体組成チェック</span>
-            </li>
-            <li class="plan-card__feature">
-              <span class="plan-card__feature-check" aria-hidden="true">✓</span>
-              <span class="plan-card__feature-text">体型写真管理</span>
-            </li>
+          <span class="trainer__cert">認定パーソナルトレーナー</span>
+        </div>
+        <div class="trainer__body">
+          <span class="c-heading__label">TRAINER</span>
+          <h2 class="trainer__title">あなた専属の<br>トレーナーが伴走します。</h2>
+          <p class="trainer__name">田中 翔太 / Shota Tanaka</p>
+          <p class="trainer__desc">指導歴8年・500名以上のダイエット成功をサポート。<br>NESTA-PFT認定。食事管理と正しいフォームで<br>無理なく続けられるトレーニングを提供しています。</p>
+          <ul class="trainer__certs">
+            <li class="trainer__cert-chip">NESTA-PFT認定</li>
+            <li class="trainer__cert-chip">NSCAトレーナー</li>
+            <li class="trainer__cert-chip">栄養士資格</li>
           </ul>
-        </article>
+        </div>
+      </div>
+    </section>
 
-        <article class="plan-card">
-          <h3 class="plan-card__title">月額継続プラン</h3>
-          <div class="plan-card__price-row">
-            <p class="plan-card__price">¥29,800</p>
-            <p class="plan-card__price-note">/ 月（税込）</p>
+    <!-- ============== Pricing ============== -->
+    <!-- Figma: 21:2 Section-07 料金プラン -->
+    <section class="pricing l-section" id="pricing">
+      <div class="pricing__inner">
+        <div class="c-heading">
+          <span class="c-heading__label">PRICING</span>
+          <h2 class="c-heading__title">料金プラン</h2>
+          <div class="pricing__campaign">
+            <span class="pricing__campaign-icon" aria-hidden="true">🎉</span>
+            <p class="pricing__campaign-text">今月限定キャンペーン：入会金30,000円 → 0円　初回体験トレーニング → 無料</p>
           </div>
-          <div class="plan-card__divider" aria-hidden="true"></div>
-          <ul class="plan-card__features">
-            <li class="plan-card__feature">
-              <span class="plan-card__feature-check" aria-hidden="true">✓</span>
-              <span class="plan-card__feature-text">週1〜2回トレーニング</span>
-            </li>
-            <li class="plan-card__feature">
-              <span class="plan-card__feature-check" aria-hidden="true">✓</span>
-              <span class="plan-card__feature-text">食事指導付き</span>
-            </li>
-            <li class="plan-card__feature">
-              <span class="plan-card__feature-check" aria-hidden="true">✓</span>
-              <span class="plan-card__feature-text">LINEサポート</span>
-            </li>
-            <li class="plan-card__feature">
-              <span class="plan-card__feature-check" aria-hidden="true">✓</span>
-              <span class="plan-card__feature-text">体組成チェック</span>
-            </li>
-          </ul>
-        </article>
-
+        </div>
+        <ul class="pricing__grid">
+          <li class="pricing__card">
+            <h3 class="pricing__plan-name">2ヶ月<br>集中コース</h3>
+            <p class="pricing__price">
+              <span class="pricing__price-num">98,000</span>
+              <span class="pricing__price-unit">円（税込）</span>
+            </p>
+            <div class="pricing__divider"></div>
+            <ul class="pricing__features">
+              <li class="pricing__feature">週2回 / 全16回</li>
+              <li class="pricing__feature">完全個室パーソナル</li>
+              <li class="pricing__feature">食事指導付き</li>
+              <li class="pricing__feature">LINEサポート</li>
+              <li class="pricing__feature">ウェア・タオル無料</li>
+              <li class="pricing__feature">体組成チェック</li>
+            </ul>
+            <a href="counseling.html" class="pricing__btn">このプランで予約</a>
+          </li>
+          <li class="pricing__card pricing__card--popular">
+            <span class="pricing__badge">人気No.1</span>
+            <h3 class="pricing__plan-name">3ヶ月<br>本格改善コース</h3>
+            <p class="pricing__price">
+              <span class="pricing__price-num">148,000</span>
+              <span class="pricing__price-unit">円（税込）</span>
+            </p>
+            <div class="pricing__divider"></div>
+            <ul class="pricing__features">
+              <li class="pricing__feature">週2〜3回 / 全24回</li>
+              <li class="pricing__feature">完全個室パーソナル</li>
+              <li class="pricing__feature">食事指導付き</li>
+              <li class="pricing__feature">LINEサポート（毎日）</li>
+              <li class="pricing__feature">ウェア・タオル無料</li>
+              <li class="pricing__feature">体組成チェック×3回</li>
+              <li class="pricing__feature">栄養士コンサル1回</li>
+            </ul>
+            <a href="counseling.html" class="pricing__btn">このプランで予約</a>
+          </li>
+          <li class="pricing__card">
+            <h3 class="pricing__plan-name">月額<br>継続プラン</h3>
+            <p class="pricing__price">
+              <span class="pricing__price-num">29,800</span>
+              <span class="pricing__price-unit">円（税込）/ 月</span>
+            </p>
+            <div class="pricing__divider"></div>
+            <ul class="pricing__features">
+              <li class="pricing__feature">週1〜2回</li>
+              <li class="pricing__feature">完全個室パーソナル</li>
+              <li class="pricing__feature">食事指導付き</li>
+              <li class="pricing__feature">LINEサポート</li>
+              <li class="pricing__feature">ウェア・タオル無料</li>
+              <li class="pricing__feature">月次体組成チェック</li>
+            </ul>
+            <a href="counseling.html" class="pricing__btn">このプランで予約</a>
+          </li>
+        </ul>
+        <p class="pricing__note">※ 全プラン、初回カウンセリング＋体験トレーニング無料。入会金は今月限定0円キャンペーン中。</p>
       </div>
-      <p class="pricing__note">※ 入会金通常30,000円 → 今だけ無料</p>
-      <a href="counseling.html" class="btn-cta pricing__cta">無料カウンセリングを予約する →</a>
     </section>
 
-    <!-- ========== Section 08: FAQ ========== -->
-    <section class="faq" id="faq" aria-labelledby="faq-title">
-      <div class="section-head">
-        <div class="section-head__bar" aria-hidden="true"></div>
-        <h2 class="section-head__title" id="faq-title">よくある質問</h2>
-        <p class="section-head__subtitle">ご入会前の疑問を解消します</p>
+    <!-- ============== FAQ ============== -->
+    <!-- Figma: 22:2 Section-08 よくある質問 -->
+    <section class="faq l-section" id="faq">
+      <div class="faq__inner">
+        <div class="c-heading">
+          <span class="c-heading__label">FAQ</span>
+          <h2 class="c-heading__title">よくある質問</h2>
+          <p class="c-heading__sub">ご不明な点はお気軽にお問い合わせください。</p>
+        </div>
+        <ul class="faq__list">
+          <li class="faq__item js-faq-item">
+            <button type="button" class="faq__q js-faq-q" aria-expanded="false">
+              <span class="faq__q-content">
+                <span class="faq__mark">Q</span>
+                <span class="faq__q-text">初めてジムに行くのですが、大丈夫ですか？</span>
+              </span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a">
+              <span class="faq__mark faq__mark--a">A</span>
+              <p class="faq__a-text">もちろん大丈夫です！当ジムは初心者の方を専門にサポートしています。トレーニング経験がゼロの方が多く通われています。まず無料カウンセリングで現状をお聞きし、あなたに合ったプランをご提案します。</p>
+            </div>
+          </li>
+          <li class="faq__item js-faq-item">
+            <button type="button" class="faq__q js-faq-q" aria-expanded="false">
+              <span class="faq__q-content">
+                <span class="faq__mark">Q</span>
+                <span class="faq__q-text">食事制限は厳しいですか？</span>
+              </span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a">
+              <span class="faq__mark faq__mark--a">A</span>
+              <p class="faq__a-text">極端な食事制限は行いません。今の生活スタイルに合わせて、無理なく続けられる食事アドバイスを提供します。「食べながら痩せる」を目指しています。</p>
+            </div>
+          </li>
+          <li class="faq__item js-faq-item">
+            <button type="button" class="faq__q js-faq-q" aria-expanded="false">
+              <span class="faq__q-content">
+                <span class="faq__mark">Q</span>
+                <span class="faq__q-text">仕事帰りに通えますか？</span>
+              </span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a">
+              <span class="faq__mark faq__mark--a">A</span>
+              <p class="faq__a-text">はい。最寄り駅から徒歩3分と通いやすい立地で、夜21時まで営業しています。仕事帰りに立ち寄ってそのまま帰れます。ウェアやタオルも無料貸出なので手ぶらでOKです。</p>
+            </div>
+          </li>
+          <li class="faq__item js-faq-item">
+            <button type="button" class="faq__q js-faq-q" aria-expanded="false">
+              <span class="faq__q-content">
+                <span class="faq__mark">Q</span>
+                <span class="faq__q-text">トレーナーは途中で変わりますか？</span>
+              </span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a">
+              <span class="faq__mark faq__mark--a">A</span>
+              <p class="faq__a-text">担当トレーナーは基本的に変わりません。専属制を採用しており、継続してあなたの体型変化・食事・メンタル状況を把握したサポートを提供します。</p>
+            </div>
+          </li>
+          <li class="faq__item js-faq-item">
+            <button type="button" class="faq__q js-faq-q" aria-expanded="false">
+              <span class="faq__q-content">
+                <span class="faq__mark">Q</span>
+                <span class="faq__q-text">強引な勧誘はありますか？</span>
+              </span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a">
+              <span class="faq__mark faq__mark--a">A</span>
+              <p class="faq__a-text">一切ありません。無料体験後も強引なセールスは行っていません。ご納得いただいたうえでご入会いただきたいと思っています。お客様が主役の場所です。</p>
+            </div>
+          </li>
+          <li class="faq__item js-faq-item">
+            <button type="button" class="faq__q js-faq-q" aria-expanded="false">
+              <span class="faq__q-content">
+                <span class="faq__mark">Q</span>
+                <span class="faq__q-text">途中でコースを変更できますか？</span>
+              </span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a">
+              <span class="faq__mark faq__mark--a">A</span>
+              <p class="faq__a-text">はい、ご相談いただければ柔軟に対応します。ライフスタイルの変化やペースに合わせてプランを調整することが可能です。</p>
+            </div>
+          </li>
+        </ul>
+        <div class="faq__cta">
+          <a href="counseling.html" class="c-btn c-btn--primary c-btn--lg">空き状況を確認して予約する →</a>
+          <p class="faq__cta-note">他にもご不明な点はLINEでお気軽にご相談ください</p>
+        </div>
       </div>
-      <dl class="faq__list">
-        <div class="faq-item">
-          <dt class="faq-item__q-row">
-            <span class="faq-item__q-label" aria-hidden="true">Q</span>
-            <span class="faq-item__q-text">運動初心者でも大丈夫ですか？</span>
-          </dt>
-          <div class="faq-item__divider" aria-hidden="true"></div>
-          <dd class="faq-item__a-row">
-            <span class="faq-item__a-label" aria-hidden="true">A</span>
-            <span class="faq-item__a-text">はい、むしろ初心者の方を大歓迎しています。トレーナーが基礎から丁寧に指導しますので、安心してお越しください。</span>
-          </dd>
-        </div>
-        <div class="faq-item">
-          <dt class="faq-item__q-row">
-            <span class="faq-item__q-label" aria-hidden="true">Q</span>
-            <span class="faq-item__q-text">無理な食事制限はありますか？</span>
-          </dt>
-          <div class="faq-item__divider" aria-hidden="true"></div>
-          <dd class="faq-item__a-row">
-            <span class="faq-item__a-label" aria-hidden="true">A</span>
-            <span class="faq-item__a-text">無理な食事制限は一切行いません。現在の生活習慣に合わせた、続けやすい食事改善をご提案します。</span>
-          </dd>
-        </div>
-        <div class="faq-item">
-          <dt class="faq-item__q-row">
-            <span class="faq-item__q-label" aria-hidden="true">Q</span>
-            <span class="faq-item__q-text">仕事帰りに通えますか？</span>
-          </dt>
-          <div class="faq-item__divider" aria-hidden="true"></div>
-          <dd class="faq-item__a-row">
-            <span class="faq-item__a-label" aria-hidden="true">A</span>
-            <span class="faq-item__a-text">駅近徒歩3分・ウェア無料貸出なので、仕事帰りにそのままご来店いただけます。夜20時まで営業しています。</span>
-          </dd>
-        </div>
-        <div class="faq-item">
-          <dt class="faq-item__q-row">
-            <span class="faq-item__q-label" aria-hidden="true">Q</span>
-            <span class="faq-item__q-text">トレーナーは変更になりますか？</span>
-          </dt>
-          <div class="faq-item__divider" aria-hidden="true"></div>
-          <dd class="faq-item__a-row">
-            <span class="faq-item__a-label" aria-hidden="true">A</span>
-            <span class="faq-item__a-text">ご入会時に担当した専属トレーナーが最後まで担当します。途中で変更になることはありません。</span>
-          </dd>
-        </div>
-        <div class="faq-item">
-          <dt class="faq-item__q-row">
-            <span class="faq-item__q-label" aria-hidden="true">Q</span>
-            <span class="faq-item__q-text">入会後にキャンセルはできますか？</span>
-          </dt>
-          <div class="faq-item__divider" aria-hidden="true"></div>
-          <dd class="faq-item__a-row">
-            <span class="faq-item__a-label" aria-hidden="true">A</span>
-            <span class="faq-item__a-text">入会後2週間以内であれば全額返金対応いたします。まずは無料体験でご確認ください。</span>
-          </dd>
-        </div>
-        <div class="faq-item">
-          <dt class="faq-item__q-row">
-            <span class="faq-item__q-label" aria-hidden="true">Q</span>
-            <span class="faq-item__q-text">無料カウンセリングはどんな内容ですか？</span>
-          </dt>
-          <div class="faq-item__divider" aria-hidden="true"></div>
-          <dd class="faq-item__a-row">
-            <span class="faq-item__a-label" aria-hidden="true">A</span>
-            <span class="faq-item__a-text">約60分の無料体験トレーニング＋カウンセリングです。勧誘などは一切ありませんので、お気軽にどうぞ。</span>
-          </dd>
-        </div>
-      </dl>
-      <a href="counseling.html" class="btn-cta faq__cta">無料カウンセリングを予約する →</a>
     </section>
 
-    <!-- ========== Section 09: 最終CTA ========== -->
-    <section class="final-cta" aria-label="最終CTA">
-      <div class="final-cta__bg">
-        <div class="final-cta__bg-overlay" aria-hidden="true"></div>
-        <h2 class="final-cta__headline">変わりたいと思った<br>"今"が、<br>人生を変えるタイミング。</h2>
-        <p class="final-cta__urgency">今月限定：入会金0円</p>
+    <!-- ============== Final CTA ============== -->
+    <!-- Figma: 23:2 Section-09 最終CTA -->
+    <section class="final" id="final-cta">
+      <div class="final__inner">
+        <span class="final__badge">今月限定：入会金0円キャンペーン実施中</span>
+        <h2 class="final__title">変わりたいと思った"今"が、<br>人生を変えるタイミングです。</h2>
+        <p class="final__lead">まずは無料カウンセリングで<br>あなたの理想を聞かせてください。</p>
+        <div class="final__buttons">
+          <a href="counseling.html" class="c-btn c-btn--primary c-btn--xl">無料カウンセリングを予約する →</a>
+          <a href="counseling.html" class="c-btn c-btn--outline c-btn--lg">まずは体験トレーニングを受ける</a>
+        </div>
+        <ul class="final__notes">
+          <li class="final__note">初回カウンセリング<br>完全無料</li>
+          <li class="final__note">当日予約<br>OK</li>
+          <li class="final__note">強引な勧誘<br>一切なし</li>
+        </ul>
       </div>
-      <a href="counseling.html" class="btn-cta">無料カウンセリングを予約する →</a>
-      <p class="final-cta__sub">まずは体験トレーニングを受ける</p>
-      <p class="final-cta__note">無料体験あり・勧誘一切なし・当日予約OK</p>
     </section>
 
-    <!-- ========== Section 10: 店舗情報 ========== -->
-    <section class="store" id="access" aria-labelledby="store-title">
-      <div class="section-head">
-        <div class="section-head__bar" aria-hidden="true"></div>
-        <h2 class="section-head__title" id="store-title">店舗情報・アクセス</h2>
+    <!-- ============== Access ============== -->
+    <!-- Figma: 23:23 Section-10 店舗情報・アクセス -->
+    <section class="access l-section" id="access">
+      <div class="access__inner">
+        <div class="access__map" aria-label="店舗位置の地図">
+          <span class="access__map-text">【地図：Google Maps埋め込み<br>店舗位置をここに表示】</span>
+          <span class="access__map-pin" aria-hidden="true"></span>
+        </div>
+        <div class="access__body">
+          <h2 class="access__title">店舗情報・アクセス</h2>
+          <dl class="access__list">
+            <div class="access__row">
+              <dt class="access__row-label">店舗名</dt>
+              <dd class="access__row-value">パーソナルジム BODY MAKE STUDIO</dd>
+            </div>
+            <div class="access__row">
+              <dt class="access__row-label">住所</dt>
+              <dd class="access__row-value">〒000-0000 東京都●●区●●1-2-3<br>●●ビル 3F</dd>
+            </div>
+            <div class="access__row">
+              <dt class="access__row-label">アクセス</dt>
+              <dd class="access__row-value">●●駅より徒歩3分</dd>
+            </div>
+            <div class="access__row">
+              <dt class="access__row-label">営業時間</dt>
+              <dd class="access__row-value">平日 10:00〜21:00<br>土日祝 9:00〜19:00</dd>
+            </div>
+            <div class="access__row">
+              <dt class="access__row-label">TEL</dt>
+              <dd class="access__row-value">000-0000-0000</dd>
+            </div>
+          </dl>
+        </div>
       </div>
-      <div class="store__map" role="img" aria-label="地図（準備中）"></div>
-      <dl class="store__info-card">
-        <div class="store__info-row">
-          <dt class="store__info-label">店舗名</dt>
-          <dd class="store__info-value">BODY MAKE STUDIO</dd>
-        </div>
-        <div class="store__info-row">
-          <dt class="store__info-label">住所</dt>
-          <dd class="store__info-value">東京都渋谷区〇〇町1-2-3<br>XXXビル3F</dd>
-        </div>
-        <div class="store__info-row">
-          <dt class="store__info-label">アクセス</dt>
-          <dd class="store__info-value">渋谷駅東口より徒歩3分</dd>
-        </div>
-        <div class="store__info-row">
-          <dt class="store__info-label">営業時間</dt>
-          <dd class="store__info-value">平日 7:00〜22:00<br>土日祝 8:00〜20:00</dd>
-        </div>
-        <div class="store__info-row">
-          <dt class="store__info-label">TEL</dt>
-          <dd class="store__info-value"><a href="tel:03XXXXXXXX" style="color: inherit;">03-XXXX-XXXX</a></dd>
-        </div>
-      </dl>
     </section>
 
   </main>
 
-  <!-- ========== Footer ========== -->
+  <!-- ============== Footer ============== -->
+  <!-- Figma: 23:58 Footer -->
   <footer class="footer">
-    <p class="footer__logo">BODY MAKE STUDIO</p>
-    <nav class="footer__nav" aria-label="フッターナビゲーション">
-      <a href="#reason" class="footer__nav-item">サービス内容</a>
-      <a href="#pricing" class="footer__nav-item">料金</a>
-      <a href="#faq" class="footer__nav-item">よくある質問</a>
-      <a href="counseling.html" class="footer__nav-item">お問い合わせ</a>
-    </nav>
-    <div class="footer__divider" aria-hidden="true"></div>
-    <p class="footer__copy">© 2025 BODY MAKE STUDIO All Rights Reserved.</p>
+    <div class="footer__inner">
+      <div class="footer__top">
+        <a href="index.html" class="footer__logo">BODY MAKE STUDIO</a>
+        <nav aria-label="フッターナビゲーション">
+          <ul class="footer__nav-list">
+            <li><a href="#" class="footer__nav-link">プライバシーポリシー</a></li>
+            <li><a href="#" class="footer__nav-link">特定商取引法に基づく表記</a></li>
+            <li><a href="#" class="footer__nav-link">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__divider"></div>
+      <p class="footer__copyright">© 2026 BODY MAKE STUDIO. All Rights Reserved.</p>
+    </div>
   </footer>
-
-  <!-- Floating CTA (SP only) -->
-  <div class="floating-cta" aria-label="無料カウンセリング予約">
-    <a href="counseling.html" class="floating-cta__btn">無料カウンセリングを予約する →</a>
-    <p class="floating-cta__note">完全無料・勧誘なし・当日予約OK</p>
-  </div>
 
   <script src="js/main.js"></script>
 </body>

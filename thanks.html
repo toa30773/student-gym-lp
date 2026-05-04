@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ご予約を受け付けました。1営業日以内にスタッフよりご連絡いたします。">
+  <meta name="robots" content="noindex">
+  <title>ご予約を受け付けました｜BODY MAKE STUDIO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <!-- Figma: 79:2 Header -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">BODY MAKE STUDIO</a>
+      <nav class="header__nav" aria-label="グローバルナビゲーション">
+        <ul class="header__nav-list">
+          <li><a href="index.html#reason" class="header__nav-link">選ばれる理由</a></li>
+          <li><a href="index.html#voice" class="header__nav-link">お客様の声</a></li>
+          <li><a href="index.html#pricing" class="header__nav-link">料金プラン</a></li>
+          <li><a href="index.html#faq" class="header__nav-link">よくある質問</a></li>
+        </ul>
+      </nav>
+      <a href="counseling.html" class="header__cta">無料カウンセリングを予約</a>
+      <button type="button" class="header__menu-btn js-menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawerMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="header__drawer js-drawer" id="drawerMenu">
+      <ul class="header__drawer-list">
+        <li><a href="index.html#reason" class="header__drawer-link">選ばれる理由</a></li>
+        <li><a href="index.html#voice" class="header__drawer-link">お客様の声</a></li>
+        <li><a href="index.html#pricing" class="header__drawer-link">料金プラン</a></li>
+        <li><a href="index.html#faq" class="header__drawer-link">よくある質問</a></li>
+        <li><a href="news.html" class="header__drawer-link">お知らせ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Success message -->
+    <!-- Figma: 79:11 Section-Success -->
+    <section class="thanks-success">
+      <div class="thanks-success__inner">
+        <span class="thanks-success__check" aria-hidden="true">✓</span>
+        <h1 class="thanks-success__title">ご予約を受け付けました！</h1>
+        <p class="thanks-success__lead">ご入力いただいたメールアドレスに確認メールをお送りしました。<br>1営業日以内にスタッフよりご連絡いたします。</p>
+      </div>
+    </section>
+
+    <!-- Next Steps -->
+    <!-- Figma: 80:2 Section-NextSteps -->
+    <section class="thanks-next">
+      <div class="thanks-next__inner">
+        <h2 class="thanks-next__title">この後の流れ</h2>
+        <ul class="thanks-next__list">
+          <li class="thanks-next__card">
+            <span class="thanks-next__icon" aria-hidden="true">📧</span>
+            <h3 class="thanks-next__card-title">確認メールをご確認ください</h3>
+            <p class="thanks-next__card-text">ご登録のメールアドレスに確認メールをお送りしました。迷惑メールフォルダもご確認ください。</p>
+          </li>
+          <li class="thanks-next__card">
+            <span class="thanks-next__icon" aria-hidden="true">📞</span>
+            <h3 class="thanks-next__card-title">スタッフからご連絡</h3>
+            <p class="thanks-next__card-text">1営業日以内に担当スタッフからメールまたはお電話でご連絡いたします。</p>
+          </li>
+          <li class="thanks-next__card">
+            <span class="thanks-next__icon" aria-hidden="true">🏃</span>
+            <h3 class="thanks-next__card-title">来店・体験トレーニング</h3>
+            <p class="thanks-next__card-text">約60分のカウンセリングと体験トレーニングで、あなたの目標をヒアリングします。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Info card -->
+    <!-- Figma: 80:17 Section-CTA -->
+    <section class="thanks-info">
+      <div class="thanks-info__inner">
+        <div class="thanks-info__card">
+          <h2 class="thanks-info__title">ご来店当日について</h2>
+          <dl>
+            <div class="thanks-info__row">
+              <dt class="thanks-info__row-label">所要時間</dt>
+              <dd class="thanks-info__row-text">約60分（カウンセリング＋体験トレーニング）</dd>
+            </div>
+            <div class="thanks-info__row">
+              <dt class="thanks-info__row-label">費用</dt>
+              <dd class="thanks-info__row-text">完全無料（一切の費用はかかりません）</dd>
+            </div>
+            <div class="thanks-info__row">
+              <dt class="thanks-info__row-label">場所</dt>
+              <dd class="thanks-info__row-text">BODY MAKE STUDIO（予約確認メールにてご案内）</dd>
+            </div>
+            <div class="thanks-info__row">
+              <dt class="thanks-info__row-label">持ち物</dt>
+              <dd class="thanks-info__row-text">動きやすい服装・飲み物（貸出あり）</dd>
+            </div>
+          </dl>
+        </div>
+        <a href="index.html" class="thanks-info__back">← トップページに戻る</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <!-- Figma: 81:2 Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <a href="index.html" class="footer__logo">BODY MAKE STUDIO</a>
+        <nav aria-label="フッターナビゲーション">
+          <ul class="footer__nav-list">
+            <li><a href="index.html#reason" class="footer__nav-link">サービス内容</a></li>
+            <li><a href="index.html#pricing" class="footer__nav-link">料金</a></li>
+            <li><a href="index.html#faq" class="footer__nav-link">よくある質問</a></li>
+            <li><a href="#" class="footer__nav-link">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__divider"></div>
+      <p class="footer__copyright">© 2026 BODY MAKE STUDIO. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
