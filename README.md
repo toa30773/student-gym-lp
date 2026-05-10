@@ -1,57 +1,93 @@
-# BODY MAKE STUDIO LP
+# BODY MAKE STUDIO — パーソナルジム LP
 
-パーソナルジム「BODY MAKE STUDIO」のランディングページ。
-Figmaデザインを基に静的HTML/CSS/JSで実装。WordPress化を見据えた構造。
+パーソナルジム「BODY MAKE STUDIO」のランディングページ制作案件。  
+Figmaデザインカンプを基に、HTML / CSS / Vanilla JS でフルスクラッチ実装。
+
+---
+
+## 制作概要
+
+| 項目 | 内容 |
+| --- | --- |
+| 制作種別 | LP（ランディングページ）コーディング |
+| デザインツール | Figma |
+| 実装 | HTML5 / CSS3 / Vanilla JS |
+| 対応デバイス | PC / スマートフォン（レスポンシブ） |
+| ページ数 | 4ページ |
+| WordPress化 | 対応可能な構造で実装済み |
+
+---
 
 ## ページ構成
 
-| ページ | ファイル | 参照Figmaフレーム (PC / SP) |
+| ページ | ファイル | 概要 |
 | --- | --- | --- |
-| トップ | `index.html` | `7:2` / `49:2` |
-| カウンセリング予約 | `counseling.html` | `71:2` / `59:2` |
-| 送信完了 | `thanks.html` | `71:3` / `59:3` |
-| お知らせ一覧 | `news.html` | `109:2` / `112:2` |
+| トップ | `index.html` | FV・悩み訴求・実績・料金・FAQ・CTA |
+| カウンセリング予約 | `counseling.html` | バリデーション付き予約フォーム |
+| 送信完了 | `thanks.html` | 予約完了サンクスページ |
+| お知らせ一覧 | `news.html` | カテゴリーフィルター付き一覧 |
 
-## 技術仕様
+---
 
-- HTML5 + CSS3 + Vanilla JS（依存なし）
-- 命名規則: BEM（`block__element--modifier`）
-- レスポンシブ: SPファースト、ブレークポイント `768px`
-- PC基準幅: `1440px`（`max-width`で中央寄せ）
-- フォント: Noto Sans JP（Google Fonts）
+## 技術スタック
 
-## ディレクトリ
+- **HTML5** — セマンティックマークアップ
+- **CSS3** — BEM命名規則 / SPファースト / カスタムプロパティ
+- **Vanilla JS** — フレームワーク・ライブラリ一切不使用
+
+---
+
+## 実装機能
+
+### JavaScript
+- モバイルドロワーメニューの開閉
+- FAQ アコーディオン
+- カウンセリングフォームのバリデーション（必須 / メール形式 / 電話番号形式）
+- お知らせ一覧のカテゴリーフィルター
+
+### レスポンシブ対応
+- SPファースト設計（ブレークポイント: `768px`）
+- PC基準幅: `1440px`（`max-width` + 中央寄せ）
+- 横スクロール完全排除
+
+---
+
+## こだわった点
+
+### CVを意識したLP設計
+「綺麗に作る」ではなく「成果が出るLP」を意識して実装。  
+FV → 悩み訴求 → 解決策 → 実績・口コミ → 料金 → FAQ → 最終CTAの順で導線を設計し、離脱ポイントごとにCTAを配置。
+
+### 保守性の高いコード設計
+- BEM命名規則の徹底
+- `rem` ベースのサイジング
+- ページ共通スタイルとページ固有スタイルの分離
+- WordPress化を見据えたHTML構造（ヘッダー・フッターの分離容易な構成）
+
+---
+
+## ディレクトリ構成
 
 ```
 .
-├── index.html
-├── counseling.html
-├── thanks.html
-├── news.html
+├── index.html            トップページ
+├── counseling.html       カウンセリング予約
+├── thanks.html           送信完了
+├── news.html             お知らせ一覧
 ├── css/
 │   ├── reset.css         CSSリセット
-│   └── style.css         共通＋全ページスタイル
+│   └── style.css         全ページ共通スタイル
 ├── js/
-│   └── main.js           ドロワー / FAQ / フォーム / カテゴリーフィルター
-├── img/                  Figma書き出し画像
-├── coding-rules.md
-├── design-system.md
-└── project-spec.md
+│   └── main.js           ドロワー / FAQ / フォームバリデーション / カテゴリーフィルター
+└── img/                  Figma書き出し画像
 ```
 
-## JSが提供する機能
+---
 
-- モバイルドロワーメニューの開閉
-- FAQ アコーディオン
-- カウンセリングフォームのバリデーション（必須/メール/電話）
-- お知らせ一覧のカテゴリーフィルター
+## WordPress対応について
 
-## WordPress化メモ
+将来的なWordPress化を前提とした構造で実装。
 
-- お知らせ一覧 (`news.html`)
-  - 投稿ループ → `WP_Query` / `while(have_posts())`
-  - カテゴリー → `get_the_category()` / カスタムタクソノミー
-  - パンくず → `breadcrumb_trail()` または Yoast SEO
-  - ページネーション → `paginate_links()` / `the_posts_pagination()`
-- ヘッダー/フッターは `header.php` / `footer.php` に分離可能な構造
-- トップページのお知らせブロックは `WP_Query` で投稿3件取得を想定
+- お知らせ一覧 → `WP_Query` / カスタムタクソノミーに対応可能
+- ヘッダー・フッター → `header.php` / `footer.php` に即座に分離可能
+- トップのお知らせブロック → `WP_Query` 3件取得を想定した構造
