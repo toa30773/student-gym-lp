@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="BODY MAKE STUDIO｜初心者専門・完全個室・食事指導付きのパーソナルジム。最短2ヶ月で理想のカラダへ。今月入会金0円キャンペーン実施中。">
   <title>BODY MAKE STUDIO｜最短2ヶ月で、理想のカラダへ。</title>
+  <!-- Google Fonts: Noto Sans JP（日本語フォント） -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -13,11 +14,15 @@
 </head>
 <body>
 
-  <!-- ============== Header ============== -->
-  <!-- Figma: 15:2 Header -->
+  <!-- ==============================================================
+       ヘッダー
+       SP: ハンバーガーボタン（.js-menu-btn）でドロワー（.js-drawer）を開閉。
+       PC: ナビリンクを横並びで表示。main.js の initDrawer() が制御する。
+       ============================================================== -->
   <header class="header">
     <div class="header__inner">
       <a href="index.html" class="header__logo">BODY MAKE STUDIO</a>
+      <!-- PC 用ナビ（SP では CSS で非表示） -->
       <nav class="header__nav" aria-label="グローバルナビゲーション">
         <ul class="header__nav-list">
           <li><a href="#reason" class="header__nav-link">特徴</a></li>
@@ -27,12 +32,14 @@
         </ul>
       </nav>
       <a href="counseling.html" class="header__cta">無料体験予約</a>
+      <!-- ハンバーガーボタン（SP のみ表示）: span 3本で 3本線アイコンを構成 -->
       <button type="button" class="header__menu-btn js-menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawerMenu">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
+    <!-- SP 用ドロワーメニュー: .is-open が付いたら表示 -->
     <div class="header__drawer js-drawer" id="drawerMenu">
       <ul class="header__drawer-list">
         <li><a href="#reason" class="header__drawer-link">特徴</a></li>
@@ -47,14 +54,18 @@
 
   <main>
 
-    <!-- ============== Hero / FV ============== -->
-    <!-- Figma: 16:2 Section-01 ファーストビュー -->
+    <!-- ==============================================================
+         ヒーロー（ファーストビュー）
+         SP: 画像が上・テキストが下の縦並び（CSS の order プロパティで制御）。
+         PC: テキスト左・画像右の横並びレイアウト。
+         ============================================================== -->
     <section class="hero">
       <div class="hero__inner">
         <div class="hero__content">
           <span class="hero__badge">今月限定：入会金0円＋初回体験無料</span>
           <h1 class="hero__title">最短2ヶ月で、<br>理想のカラダへ。</h1>
           <p class="hero__lead">初心者専門・完全個室・食事指導付き<br>だから無理なく続く。</p>
+          <!-- 3つの特徴タグ -->
           <ul class="hero__features">
             <li class="hero__feature">✓ 手ぶらでOK</li>
             <li class="hero__feature">✓ 駅近徒歩3分</li>
@@ -64,25 +75,27 @@
           <p class="hero__note">初回カウンセリング＋体験トレーニング 完全無料</p>
         </div>
         <div class="hero__image">
-          <img src="img/hero-top.png" alt="BODY MAKE STUDIO トレーニングジム">
+          <img src="images/hero-top.webp" alt="BODY MAKE STUDIO トレーニングジム">
         </div>
       </div>
     </section>
 
-    <!-- ============== News (preview) ============== -->
-    <!-- Figma: 101:2 Section-News [WordPress: カスタム投稿] -->
+    <!-- ==============================================================
+         お知らせ（プレビュー）
+         最新3件を表示。WordPress 化時は WP_Query でループに置き換える。
+         ============================================================== -->
     <section class="news" id="news">
       <div class="news__inner">
         <div class="c-heading news__heading">
           <span class="c-heading__label">NEWS</span>
           <h2 class="c-heading__title">お知らせ</h2>
         </div>
-        <!-- WordPress化時：WP_Query で投稿ループ -->
         <ul class="news__list">
           <li>
             <a href="news.html" class="news__item">
               <div class="news__meta">
                 <time class="news__date" datetime="2026-05-01">2026.05.01</time>
+                <!-- カテゴリーは --campaign / --info / --new の3種類 -->
                 <span class="news__category news__category--campaign">キャンペーン</span>
               </div>
               <p class="news__title">5月限定！入会金0円キャンペーン実施中</p>
@@ -111,8 +124,10 @@
       </div>
     </section>
 
-    <!-- ============== Pain Points ============== -->
-    <!-- Figma: 17:2 Section-02 悩み訴求 -->
+    <!-- ==============================================================
+         悩み訴求
+         ターゲットが抱える4つの悩みをカード形式で並べる。
+         ============================================================== -->
     <section class="pain l-section" id="pain">
       <div class="pain__inner">
         <div class="c-heading">
@@ -149,8 +164,11 @@
       </div>
     </section>
 
-    <!-- ============== Reasons ============== -->
-    <!-- Figma: 18:2 Section-03 選ばれる理由 -->
+    <!-- ==============================================================
+         選ばれる5つの理由
+         理由カードは最初の3枚が3列、残り2枚が2列のグリッド。
+         下部に施設の写真3枚を横並びで表示する。
+         ============================================================== -->
     <section class="reason l-section" id="reason">
       <div class="reason__inner">
         <div class="c-heading">
@@ -158,6 +176,7 @@
           <h2 class="c-heading__title">このジムが選ばれる5つの理由</h2>
           <p class="c-heading__sub">初心者でも安心して通い続けられる仕組みがあります。</p>
         </div>
+        <!-- 理由 01〜03: 3列グリッド -->
         <ul class="reason__grid">
           <li class="reason__card">
             <span class="reason__num">01</span>
@@ -175,6 +194,7 @@
             <p class="reason__text">週1回のトレーニングだけでなく、毎日の食事もLINEで管理。食事制限なしで美味しく痩せられます。</p>
           </li>
         </ul>
+        <!-- 理由 04〜05: 2列グリッド（--2col で列数を上書き） -->
         <ul class="reason__grid reason__grid--2col">
           <li class="reason__card">
             <span class="reason__num">04</span>
@@ -187,17 +207,18 @@
             <p class="reason__text">高額オプションの押し売りは一切なし。初めてジムに通う方が安心して相談できる環境を大切にしています。</p>
           </li>
         </ul>
+        <!-- 施設写真: 画像下部にグラデーション + ラベルを重ねて表示 -->
         <ul class="reason__photos">
           <li class="reason__photo">
-            <img src="img/feature-training.png" alt="トレーニング風景">
+            <img src="images/feature-training.webp" alt="トレーニング風景">
             <div class="reason__photo-label"><span class="reason__photo-label-text">トレーニング風景</span></div>
           </li>
           <li class="reason__photo">
-            <img src="img/feature-private.png" alt="完全個室スペース">
+            <img src="images/feature-private.webp" alt="完全個室スペース">
             <div class="reason__photo-label"><span class="reason__photo-label-text">完全個室スペース</span></div>
           </li>
           <li class="reason__photo">
-            <img src="img/feature-interior.png" alt="清潔感ある内装">
+            <img src="images/feature-interior.webp" alt="清潔感ある内装">
             <div class="reason__photo-label"><span class="reason__photo-label-text">清潔感ある内装</span></div>
           </li>
         </ul>
@@ -208,8 +229,10 @@
       </div>
     </section>
 
-    <!-- ============== Before / After ============== -->
-    <!-- Figma: 19:2 Section-04 ビフォーアフター -->
+    <!-- ==============================================================
+         ビフォーアフター
+         BEFORE は画像なし（空の .ba__photo）、AFTER に実績写真を表示。
+         ============================================================== -->
     <section class="ba l-section" id="results">
       <div class="ba__inner">
         <div class="c-heading">
@@ -222,12 +245,12 @@
             <div class="ba__pair">
               <div class="ba__col">
                 <span class="ba__label ba__label--before">BEFORE</span>
-                <div class="ba__photo" aria-label="Before写真"></div>
+                <div class="ba__photo" aria-label="Before写真"></div><!-- Before は現状写真なし -->
               </div>
               <div class="ba__col">
                 <span class="ba__label ba__label--after">AFTER</span>
                 <div class="ba__photo">
-                  <img src="img/ba-after-1.png" alt="2ヶ月後の体型変化">
+                  <img src="images/ba-after-1.webp" alt="2ヶ月後の体型変化">
                 </div>
               </div>
             </div>
@@ -246,7 +269,7 @@
               <div class="ba__col">
                 <span class="ba__label ba__label--after">AFTER</span>
                 <div class="ba__photo">
-                  <img src="img/ba-after-2.png" alt="3ヶ月後の体型変化">
+                  <img src="images/ba-after-2.webp" alt="3ヶ月後の体型変化">
                 </div>
               </div>
             </div>
@@ -265,7 +288,7 @@
               <div class="ba__col">
                 <span class="ba__label ba__label--after">AFTER</span>
                 <div class="ba__photo">
-                  <img src="img/ba-after-3.png" alt="2ヶ月後の体型変化">
+                  <img src="images/ba-after-3.webp" alt="2ヶ月後の体型変化">
                 </div>
               </div>
             </div>
@@ -279,8 +302,9 @@
       </div>
     </section>
 
-    <!-- ============== Voice / Testimonials ============== -->
-    <!-- Figma: 20:2 Section-05 お客様の声 -->
+    <!-- ==============================================================
+         お客様の声
+         ============================================================== -->
     <section class="voice l-section" id="voice">
       <div class="voice__inner">
         <div class="c-heading">
@@ -294,7 +318,7 @@
             <p class="voice__text">「仕事帰りに気軽に通えるのが最高です。個室なので最初の緊張もすぐなくなりました。2ヶ月でスーツのサイズが変わって自信がつきました！」</p>
             <span class="voice__badge">2ヶ月で-6kg達成</span>
             <div class="voice__person">
-              <div class="voice__avatar"><img src="img/avatar-1.png" alt=""></div>
+              <div class="voice__avatar"><img src="images/avatar-1.webp" alt=""></div>
               <div>
                 <p class="voice__name">田中 K</p>
                 <p class="voice__profile">28歳・会社員</p>
@@ -306,7 +330,7 @@
             <p class="voice__text">「食事制限なしで痩せられると聞いて半信半疑でしたが、3ヶ月で体脂肪率が8%も落ちました。トレーナーさんが毎日LINEで応援してくれて続けられました。」</p>
             <span class="voice__badge">3ヶ月で-10kg達成</span>
             <div class="voice__person">
-              <div class="voice__avatar"><img src="img/avatar-2.png" alt=""></div>
+              <div class="voice__avatar"><img src="images/avatar-2.webp" alt=""></div>
               <div>
                 <p class="voice__name">佐藤 M</p>
                 <p class="voice__profile">32歳・主婦</p>
@@ -318,7 +342,7 @@
             <p class="voice__text">「初めてジムに行ったのですが、何も知らない状態から丁寧に教えてもらえました。勧誘も全くなくて安心して通えています。」</p>
             <span class="voice__badge">2ヶ月で-7kg達成</span>
             <div class="voice__person">
-              <div class="voice__avatar"><img src="img/avatar-3.png" alt=""></div>
+              <div class="voice__avatar"><img src="images/avatar-3.webp" alt=""></div>
               <div>
                 <p class="voice__name">鈴木 T</p>
                 <p class="voice__profile">25歳・学生</p>
@@ -329,13 +353,14 @@
       </div>
     </section>
 
-    <!-- ============== Trainer ============== -->
-    <!-- Figma: 20:56 Section-06 トレーナー紹介 -->
+    <!-- ==============================================================
+         トレーナー紹介
+         ============================================================== -->
     <section class="trainer l-section" id="trainer">
       <div class="trainer__inner">
         <div class="trainer__photo-wrap">
           <div class="trainer__photo">
-            <img src="img/trainer.png" alt="トレーナー 田中翔太">
+            <img src="images/trainer.webp" alt="トレーナー 田中翔太">
           </div>
           <span class="trainer__cert">認定パーソナルトレーナー</span>
         </div>
@@ -344,6 +369,7 @@
           <h2 class="trainer__title">あなた専属の<br>トレーナーが伴走します。</h2>
           <p class="trainer__name">田中 翔太 / Shota Tanaka</p>
           <p class="trainer__desc">指導歴8年・500名以上のダイエット成功をサポート。<br>NESTA-PFT認定。食事管理と正しいフォームで<br>無理なく続けられるトレーニングを提供しています。</p>
+          <!-- 資格チップ -->
           <ul class="trainer__certs">
             <li class="trainer__cert-chip">NESTA-PFT認定</li>
             <li class="trainer__cert-chip">NSCAトレーナー</li>
@@ -353,8 +379,10 @@
       </div>
     </section>
 
-    <!-- ============== Pricing ============== -->
-    <!-- Figma: 21:2 Section-07 料金プラン -->
+    <!-- ==============================================================
+         料金プラン
+         人気プランには .pricing__card--popular でハイライト表示。
+         ============================================================== -->
     <section class="pricing l-section" id="pricing">
       <div class="pricing__inner">
         <div class="c-heading">
@@ -366,6 +394,7 @@
           </div>
         </div>
         <ul class="pricing__grid">
+          <!-- 2ヶ月集中コース -->
           <li class="pricing__card">
             <h3 class="pricing__plan-name">2ヶ月<br>集中コース</h3>
             <p class="pricing__price">
@@ -383,6 +412,7 @@
             </ul>
             <a href="counseling.html" class="pricing__btn">このプランで予約</a>
           </li>
+          <!-- 3ヶ月本格改善コース（人気No.1 ハイライト） -->
           <li class="pricing__card pricing__card--popular">
             <span class="pricing__badge">人気No.1</span>
             <h3 class="pricing__plan-name">3ヶ月<br>本格改善コース</h3>
@@ -402,6 +432,7 @@
             </ul>
             <a href="counseling.html" class="pricing__btn">このプランで予約</a>
           </li>
+          <!-- 月額継続プラン -->
           <li class="pricing__card">
             <h3 class="pricing__plan-name">月額<br>継続プラン</h3>
             <p class="pricing__price">
@@ -424,8 +455,11 @@
       </div>
     </section>
 
-    <!-- ============== FAQ ============== -->
-    <!-- Figma: 22:2 Section-08 よくある質問 -->
+    <!-- ==============================================================
+         FAQ（よくある質問）
+         .js-faq-item をクリックすると .is-open が付き回答欄が開く。
+         main.js の initFaq() が制御する。
+         ============================================================== -->
     <section class="faq l-section" id="faq">
       <div class="faq__inner">
         <div class="c-heading">
@@ -434,13 +468,14 @@
           <p class="c-heading__sub">ご不明な点はお気軽にお問い合わせください。</p>
         </div>
         <ul class="faq__list">
+          <!-- 各 .faq__item: ボタン（質問）＋ div（回答）のセット -->
           <li class="faq__item js-faq-item">
             <button type="button" class="faq__q js-faq-q" aria-expanded="false">
               <span class="faq__q-content">
                 <span class="faq__mark">Q</span>
                 <span class="faq__q-text">初めてジムに行くのですが、大丈夫ですか？</span>
               </span>
-              <span class="faq__icon" aria-hidden="true"></span>
+              <span class="faq__icon" aria-hidden="true"></span><!-- + / − アイコン -->
             </button>
             <div class="faq__a">
               <span class="faq__mark faq__mark--a">A</span>
@@ -520,8 +555,10 @@
       </div>
     </section>
 
-    <!-- ============== Final CTA ============== -->
-    <!-- Figma: 23:2 Section-09 最終CTA -->
+    <!-- ==============================================================
+         最終 CTA
+         ページ末尾のコンバージョン誘導。ボタン2つを縦（SP）/横（PC）に並べる。
+         ============================================================== -->
     <section class="final" id="final-cta">
       <div class="final__inner">
         <span class="final__badge">今月限定：入会金0円キャンペーン実施中</span>
@@ -531,6 +568,7 @@
           <a href="counseling.html" class="c-btn c-btn--primary c-btn--xl">無料カウンセリングを予約する →</a>
           <a href="counseling.html" class="c-btn c-btn--outline c-btn--lg">まずは体験トレーニングを受ける</a>
         </div>
+        <!-- 安心ポイント 3点 -->
         <ul class="final__notes">
           <li class="final__note">初回カウンセリング<br>完全無料</li>
           <li class="final__note">当日予約<br>OK</li>
@@ -539,10 +577,13 @@
       </div>
     </section>
 
-    <!-- ============== Access ============== -->
-    <!-- Figma: 23:23 Section-10 店舗情報・アクセス -->
+    <!-- ==============================================================
+         店舗情報・アクセス
+         地図エリアは現状プレースホルダー。本番時は Google Maps iframe に差し替える。
+         ============================================================== -->
     <section class="access l-section" id="access">
       <div class="access__inner">
+        <!-- 地図プレースホルダー（本番: Google Maps の iframe を埋め込む） -->
         <div class="access__map" aria-label="店舗位置の地図">
           <span class="access__map-text">【地図：Google Maps埋め込み<br>店舗位置をここに表示】</span>
           <span class="access__map-pin" aria-hidden="true"></span>
@@ -577,8 +618,9 @@
 
   </main>
 
-  <!-- ============== Footer ============== -->
-  <!-- Figma: 23:58 Footer -->
+  <!-- ==============================================================
+       フッター
+       ============================================================== -->
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__top">

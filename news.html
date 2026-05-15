@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="BODY MAKE STUDIOからのお知らせ一覧。キャンペーン・営業時間・新トレーナー加入などの最新情報をお届けします。">
   <title>お知らせ｜BODY MAKE STUDIO</title>
+  <!-- Google Fonts: Noto Sans JP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -13,8 +14,9 @@
 </head>
 <body>
 
-  <!-- Header [WordPress: header.php] -->
-  <!-- Figma: 109:3 Header -->
+  <!-- ==============================================================
+       ヘッダー（全ページ共通構造）
+       ============================================================== -->
   <header class="header">
     <div class="header__inner">
       <a href="index.html" class="header__logo">BODY MAKE STUDIO</a>
@@ -43,9 +45,9 @@
 
   <main>
 
-    <!-- Page Hero (Breadcrumb + Title) -->
-    <!-- Figma: 109:13 Page-Hero -->
-    <!-- WordPress化: パンくずは breadcrumb_trail() / Yoast SEO -->
+    <!-- ==============================================================
+         ページヘッダー（パンくずリスト + ページタイトル）
+         ============================================================== -->
     <section class="news-page-hero">
       <div class="news-page-hero__inner">
         <nav class="news-page-hero__breadcrumb" aria-label="パンくずリスト">
@@ -60,11 +62,15 @@
       </div>
     </section>
 
-    <!-- Category Filter -->
-    <!-- Figma: 109:20 Category-Filter -->
-    <!-- WordPress化: wp_list_categories() / カスタムタクソノミー -->
+    <!-- ==============================================================
+         カテゴリーフィルター
+         .js-news-filter ボタンのクリックで .js-news-card を絞り込む。
+         main.js の initNewsFilter() が制御する。
+         data-category 属性でフィルター対象を指定する。
+         ============================================================== -->
     <nav class="news-filter" aria-label="カテゴリーフィルター">
       <div class="news-filter__inner">
+        <!-- data-category="all" ですべてのカードを表示 -->
         <button type="button" class="news-filter__btn news-filter__btn--active js-news-filter" data-category="all">すべて</button>
         <button type="button" class="news-filter__btn news-filter__btn--campaign js-news-filter" data-category="campaign">キャンペーン</button>
         <button type="button" class="news-filter__btn news-filter__btn--info js-news-filter" data-category="info">お知らせ</button>
@@ -72,16 +78,19 @@
       </div>
     </nav>
 
-    <!-- Post Grid -->
-    <!-- Figma: 110:2 Post-Grid -->
-    <!-- WordPress化: WP_Query loop - <?php while(have_posts()): the_post(); ?> -->
+    <!-- ==============================================================
+         投稿グリッド
+         各カードの data-category がフィルターの絞り込みキーになる。
+         WordPress 化時は WP_Query のループに置き換える。
+         ============================================================== -->
     <section class="news-archive">
       <div class="news-archive__inner">
         <ul class="news-archive__grid">
-          <!-- Post 1 -->
+
+          <!-- 投稿1: キャンペーン -->
           <li class="news-archive__card js-news-card" data-category="campaign">
             <a href="#">
-              <div class="news-archive__thumb">アイキャッチ画像</div>
+              <div class="news-archive__thumb">アイキャッチ画像</div><!-- 本番: img タグに差し替え -->
               <div class="news-archive__body">
                 <div class="news-archive__meta">
                   <time class="news-archive__date" datetime="2026-05-01">2026.05.01</time>
@@ -93,7 +102,8 @@
               </div>
             </a>
           </li>
-          <!-- Post 2 -->
+
+          <!-- 投稿2: お知らせ -->
           <li class="news-archive__card js-news-card" data-category="info">
             <a href="#">
               <div class="news-archive__thumb">アイキャッチ画像</div>
@@ -108,7 +118,8 @@
               </div>
             </a>
           </li>
-          <!-- Post 3 -->
+
+          <!-- 投稿3: 新着情報 -->
           <li class="news-archive__card js-news-card" data-category="new">
             <a href="#">
               <div class="news-archive__thumb">アイキャッチ画像</div>
@@ -123,7 +134,8 @@
               </div>
             </a>
           </li>
-          <!-- Post 4 -->
+
+          <!-- 投稿4: キャンペーン -->
           <li class="news-archive__card js-news-card" data-category="campaign">
             <a href="#">
               <div class="news-archive__thumb">アイキャッチ画像</div>
@@ -138,7 +150,8 @@
               </div>
             </a>
           </li>
-          <!-- Post 5 -->
+
+          <!-- 投稿5: お知らせ -->
           <li class="news-archive__card js-news-card" data-category="info">
             <a href="#">
               <div class="news-archive__thumb">アイキャッチ画像</div>
@@ -153,7 +166,8 @@
               </div>
             </a>
           </li>
-          <!-- Post 6 -->
+
+          <!-- 投稿6: 新着情報 -->
           <li class="news-archive__card js-news-card" data-category="new">
             <a href="#">
               <div class="news-archive__thumb">アイキャッチ画像</div>
@@ -168,13 +182,15 @@
               </div>
             </a>
           </li>
+
         </ul>
       </div>
     </section>
 
-    <!-- Pagination -->
-    <!-- Figma: 111:2 Pagination -->
-    <!-- WordPress化: paginate_links() / the_posts_pagination() -->
+    <!-- ==============================================================
+         ページネーション
+         WordPress 化時は paginate_links() / the_posts_pagination() に差し替える。
+         ============================================================== -->
     <nav class="news-pagination" aria-label="ページネーション">
       <a href="#" class="news-pagination__item" aria-label="前のページ">←</a>
       <a href="#" class="news-pagination__item news-pagination__item--active" aria-current="page">1</a>
@@ -185,8 +201,9 @@
 
   </main>
 
-  <!-- Footer [WordPress: footer.php] -->
-  <!-- Figma: 111:13 Footer -->
+  <!-- ==============================================================
+       フッター
+       ============================================================== -->
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__top">

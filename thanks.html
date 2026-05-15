@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ご予約を受け付けました。1営業日以内にスタッフよりご連絡いたします。">
+  <!-- noindex: サンクスページは検索エンジンにインデックスさせない -->
   <meta name="robots" content="noindex">
   <title>ご予約を受け付けました｜BODY MAKE STUDIO</title>
+  <!-- Google Fonts: Noto Sans JP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -14,8 +16,9 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <!-- Figma: 79:2 Header -->
+  <!-- ==============================================================
+       ヘッダー（全ページ共通構造）
+       ============================================================== -->
   <header class="header">
     <div class="header__inner">
       <a href="index.html" class="header__logo">BODY MAKE STUDIO</a>
@@ -45,18 +48,22 @@
 
   <main>
 
-    <!-- Success message -->
-    <!-- Figma: 79:11 Section-Success -->
+    <!-- ==============================================================
+         予約完了メッセージ
+         フォーム送信後にリダイレクトされるページ。
+         ============================================================== -->
     <section class="thanks-success">
       <div class="thanks-success__inner">
+        <!-- ✓ アイコン（円形のボーダーに囲まれたチェックマーク） -->
         <span class="thanks-success__check" aria-hidden="true">✓</span>
         <h1 class="thanks-success__title">ご予約を受け付けました！</h1>
         <p class="thanks-success__lead">ご入力いただいたメールアドレスに確認メールをお送りしました。<br>1営業日以内にスタッフよりご連絡いたします。</p>
       </div>
     </section>
 
-    <!-- Next Steps -->
-    <!-- Figma: 80:2 Section-NextSteps -->
+    <!-- ==============================================================
+         この後の流れ（3ステップ）
+         ============================================================== -->
     <section class="thanks-next">
       <div class="thanks-next__inner">
         <h2 class="thanks-next__title">この後の流れ</h2>
@@ -80,8 +87,10 @@
       </div>
     </section>
 
-    <!-- Info card -->
-    <!-- Figma: 80:17 Section-CTA -->
+    <!-- ==============================================================
+         ご来店当日の案内カード
+         dl 要素で「ラベル: 値」形式の店舗情報を構造化している。
+         ============================================================== -->
     <section class="thanks-info">
       <div class="thanks-info__inner">
         <div class="thanks-info__card">
@@ -111,8 +120,9 @@
 
   </main>
 
-  <!-- Footer -->
-  <!-- Figma: 81:2 Footer -->
+  <!-- ==============================================================
+       フッター
+       ============================================================== -->
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__top">

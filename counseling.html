@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="BODY MAKE STUDIOの無料カウンセリング＋体験トレーニング予約フォーム。完全無料、勧誘一切なし。1営業日以内にスタッフよりご連絡いたします。">
   <title>無料カウンセリング予約｜BODY MAKE STUDIO</title>
+  <!-- Google Fonts: Noto Sans JP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -13,8 +14,10 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <!-- Figma: 74:2 Header -->
+  <!-- ==============================================================
+       ヘッダー（index.html と共通構造）
+       SP: ハンバーガーメニュー / PC: ナビ横並び。main.js の initDrawer() が制御。
+       ============================================================== -->
   <header class="header">
     <div class="header__inner">
       <a href="index.html" class="header__logo">BODY MAKE STUDIO</a>
@@ -44,8 +47,10 @@
 
   <main>
 
-    <!-- Counseling Hero -->
-    <!-- Figma: 74:11 Section-Hero -->
+    <!-- ==============================================================
+         カウンセリングヒーロー
+         SP: 画像が上・テキストが下。PC: テキスト左・画像右。
+         ============================================================== -->
     <section class="cns-hero">
       <div class="cns-hero__inner">
         <div class="cns-hero__content">
@@ -54,13 +59,15 @@
           <p class="cns-hero__lead">まずはお気軽にご相談ください。<br>あなたの目標に合わせた最適なプランをご提案します。</p>
         </div>
         <div class="cns-hero__image">
-          <img src="img/hero-counseling.png" alt="カウンセリング風景">
+          <img src="images/hero-counseling.webp" alt="カウンセリング風景">
         </div>
       </div>
     </section>
 
-    <!-- Trust Badges -->
-    <!-- Figma: 75:2 Section-Trust -->
+    <!-- ==============================================================
+         安心ポイント（4つのバッジ）
+         無料・勧誘なしなどの信頼性を強調するセクション。
+         ============================================================== -->
     <section class="cns-trust">
       <div class="cns-trust__inner">
         <ul class="cns-trust__list">
@@ -84,18 +91,21 @@
       </div>
     </section>
 
-    <!-- Steps -->
-    <!-- Figma: 75:16 Section-Steps -->
+    <!-- ==============================================================
+         来店までの流れ（4ステップ）
+         SP: 縦並び / PC: 横並び（矢印 .cns-steps__arrow は PC のみ表示）。
+         ============================================================== -->
     <section class="cns-steps">
       <div class="cns-steps__inner">
         <h2 class="cns-steps__title">カウンセリングの流れ</h2>
+        <!-- ol を使うことでステップの順序をセマンティックに表現 -->
         <ol class="cns-steps__list">
           <li class="cns-steps__item">
             <span class="cns-steps__num">1</span>
             <h3 class="cns-steps__name">フォームを送信</h3>
             <p class="cns-steps__desc">希望日時・お悩みをご入力ください。</p>
           </li>
-          <li class="cns-steps__arrow" aria-hidden="true">→</li>
+          <li class="cns-steps__arrow" aria-hidden="true">→</li><!-- 装飾用の矢印（PC のみ表示） -->
           <li class="cns-steps__item">
             <span class="cns-steps__num">2</span>
             <h3 class="cns-steps__name">スタッフから連絡</h3>
@@ -117,12 +127,19 @@
       </div>
     </section>
 
-    <!-- Form -->
-    <!-- Figma: 77:2 Section-Form -->
+    <!-- ==============================================================
+         予約フォーム
+         送信先は thanks.html（本番時は PHP / フォームサービスに変更する）。
+         バリデーションは main.js の initForm() が担当する。
+         .js-required が付いた入力欄が送信時の検証対象。
+         ============================================================== -->
     <section class="cns-form-section">
       <div class="cns-form-section__inner">
         <h2 class="cns-form-section__title">予約フォームに入力する</h2>
+        <!-- novalidate: ブラウザデフォルトのバリデーションを無効化し JS で制御 -->
         <form class="form js-form" action="thanks.html" method="get" novalidate>
+
+          <!-- 氏名・メールアドレス（横2列） -->
           <div class="form__row">
             <div class="form__field">
               <div class="form__label-row">
@@ -130,6 +147,7 @@
                 <span class="form__required">必須</span>
               </div>
               <input class="form__input js-required" type="text" id="name" name="name" placeholder="山田 太郎" autocomplete="name">
+              <!-- .js-error はバリデーションエラー時に .is-show で表示 -->
               <p class="form__error js-error" data-for="name">お名前をご入力ください。</p>
             </div>
             <div class="form__field">
@@ -142,6 +160,7 @@
             </div>
           </div>
 
+          <!-- 電話番号 -->
           <div class="form__field">
             <div class="form__label-row">
               <label class="form__label" for="tel">電話番号</label>
@@ -151,6 +170,7 @@
             <p class="form__error js-error" data-for="tel">電話番号をご入力ください。</p>
           </div>
 
+          <!-- 第1・第2希望日時（横2列） -->
           <div class="form__row">
             <div class="form__field">
               <div class="form__label-row">
@@ -169,6 +189,7 @@
             </div>
           </div>
 
+          <!-- 第3希望日時 -->
           <div class="form__field">
             <div class="form__label-row">
               <label class="form__label" for="date3">第3希望日時</label>
@@ -177,6 +198,7 @@
             <input class="form__input" type="datetime-local" id="date3" name="date3">
           </div>
 
+          <!-- 現在のお悩み（チェックボックス複数選択可） -->
           <div class="form__field">
             <div class="form__label-row">
               <span class="form__label">現在のお悩み</span>
@@ -192,6 +214,7 @@
             </div>
           </div>
 
+          <!-- ご質問・ご要望（自由記述） -->
           <div class="form__field">
             <div class="form__label-row">
               <label class="form__label" for="message">ご質問・ご要望</label>
@@ -211,8 +234,9 @@
 
   </main>
 
-  <!-- Footer -->
-  <!-- Figma: 78:2 Footer -->
+  <!-- ==============================================================
+       フッター
+       ============================================================== -->
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__top">

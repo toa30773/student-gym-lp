@@ -1,14 +1,14 @@
 @charset "UTF-8";
 
 /* ============================================================
-   BODY MAKE STUDIO LP - common stylesheet
-   Figma fileKey: shJWQE83m8pmmdL6eicm4r
-   PC: 1440px / SP: 768px breakpoint (mobile first)
+   BODY MAKE STUDIO LP - 共通スタイルシート
+   全ページで読み込まれる。モバイルファーストで記述し、
+   768px 以上を @media (min-width: 768px) で上書きする。
    ============================================================ */
 
-/* ===== Variables ===== */
+/* ===== CSS カスタムプロパティ（変数） ===== */
 :root {
-  /* Colors - background */
+  /* 背景色: bg-base が最も暗いベース。セクションごとに微妙に差をつけてメリハリを出す */
   --bg-base: #0d0d0d;
   --bg-darker: #0a0a0a;
   --bg-deepest: #080808;
@@ -16,67 +16,66 @@
   --bg-section-2: #0e0e0e;
   --bg-section-3: #181818;
   --bg-section-4: #141414;
-  --bg-card: #1a1a1a;
+  --bg-card: #1a1a1a;       /* カード背景 */
   --bg-card-2: #1c1c1c;
   --bg-card-3: #1f1f1f;
-  --bg-input: #1f1f1f;
-  --bg-chip: #212121;
+  --bg-input: #1f1f1f;      /* フォーム入力欄の背景 */
+  --bg-chip: #212121;       /* タグ・チップの背景 */
   --bg-chip-2: #2e2e2e;
 
-  /* Colors - accent */
+  /* アクセントカラー: オレンジ系。透明度違いも用意してバッジ背景などに使う */
   --accent: #ff6b00;
   --accent-light: #ff9433;
   --accent-amber: #ffa640;
   --accent-amber-2: #ffa633;
   --accent-warm: #ffb240;
-  --accent-bg-15: rgba(255, 107, 0, 0.15);
+  --accent-bg-15: rgba(255, 107, 0, 0.15); /* 薄い背景用 */
   --accent-bg-20: rgba(255, 107, 0, 0.2);
-  --accent-bg-50: rgba(255, 107, 0, 0.5);
+  --accent-bg-50: rgba(255, 107, 0, 0.5);  /* ボーダー用 */
 
-  /* Colors - text */
+  /* テキスト色: white → muted の順に暗くなる */
   --text-white: #ffffff;
   --text-light: #ccc;
   --text-light-2: #d9d9d9;
   --text-medium: #b3b3b3;
   --text-medium-2: #a6a6a6;
   --text-medium-3: #bfbfbf;
-  --text-mid: #999;
+  --text-mid: #999;         /* 補足テキストなど中程度の暗さ */
   --text-dim: #808080;
   --text-dim-2: #737373;
-  --text-muted: #595959;
+  --text-muted: #595959;    /* コピーライトなど最も目立たせない文字 */
   --text-muted-2: #666;
 
-  /* Colors - border / divider */
+  /* ボーダー・区切り線 */
   --border-light: #333;
   --border-mid: #383838;
   --border-dark: #404040;
-  --border-input: #4d4d4d;
+  --border-input: #4d4d4d;  /* フォーム入力欄のボーダー */
   --divider: #2e2e2e;
   --divider-2: #262626;
   --divider-3: #474747;
 
-  /* Colors - misc */
-  --chip-green: #59d973;
-  --color-star: #ffbf00;
-  --color-blue: #39f;
-  --color-green: #4dcc73;
+  /* その他の色 */
+  --chip-green: #59d973;    /* 特徴タグの緑 */
+  --color-star: #ffbf00;    /* 星評価の黄色 */
+  --color-blue: #39f;       /* お知らせカテゴリーの青 */
+  --color-green: #4dcc73;   /* お知らせカテゴリーの緑 */
   --color-blue-bg: rgba(51, 153, 255, 0.2);
   --color-green-bg: rgba(77, 204, 115, 0.2);
 
-  /* Layout */
-  --max-width: 1440px;
-  --content-max: 1280px;
-  --container-padding-pc: 80px;
-  --container-padding-sp: 20px;
+  /* レイアウト */
+  --max-width: 1440px;            /* コンテンツの最大幅 */
+  --container-padding-pc: 80px;   /* PC時の左右余白 */
+  --container-padding-sp: 20px;   /* SP時の左右余白 */
 
-  /* Font */
+  /* フォント: 日本語を優先しつつ OS のシステムフォントにフォールバック */
   --font-base: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
 }
 
-/* ===== Base ===== */
+/* ===== ベーススタイル ===== */
 html {
-  font-size: 62.5%; /* 1rem = 10px */
-  scroll-behavior: smooth;
+  font-size: 62.5%; /* 1rem = 10px にして rem 計算を楽にする（例: 1.6rem = 16px） */
+  scroll-behavior: smooth; /* アンカーリンクでのスムーズスクロール */
 }
 
 body {
@@ -85,17 +84,18 @@ body {
   line-height: 1.7;
   color: var(--text-white);
   background-color: var(--bg-base);
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;  /* macOS でフォントを滑らかにレンダリング */
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: hidden; /* 横スクロールを防ぐ */
 }
 
+/* 全画像を幅いっぱいに表示し、はみ出た部分はトリミング */
 img {
   width: 100%;
-  height: auto;
   object-fit: cover;
 }
 
+/* リンクのホバー時にトランジションを適用（色・透明度・背景色） */
 a {
   transition: opacity 0.2s ease, color 0.2s ease, background-color 0.2s ease;
 }
@@ -104,34 +104,15 @@ a:hover {
   opacity: 0.85;
 }
 
-/* ===== Layout helpers ===== */
-.l-container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.l-inner {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding-left: var(--container-padding-sp);
-  padding-right: var(--container-padding-sp);
-}
-
-@media (min-width: 768px) {
-  .l-inner {
-    padding-left: var(--container-padding-pc);
-    padding-right: var(--container-padding-pc);
-  }
-}
-
 /* ============================================================
-   Header
+   ヘッダー
+   スクロール時も画面上部に固定（sticky）。
+   SP ではハンバーガーメニュー、PC ではナビを横並びで表示する。
    ============================================================ */
 .header {
-  position: sticky;
+  position: sticky; /* スクロールしても上部に固定 */
   top: 0;
-  z-index: 100;
+  z-index: 100; /* 他のコンテンツより手前に表示 */
   width: 100%;
   background-color: var(--bg-darker);
   border-bottom: 1px solid var(--border-mid);
@@ -192,7 +173,7 @@ a:hover {
   opacity: 0.9;
 }
 
-/* Mobile menu toggle */
+/* ハンバーガーボタン（SP のみ表示、PC では display: none） */
 .header__menu-btn {
   display: inline-flex;
   flex-direction: column;
@@ -212,19 +193,21 @@ a:hover {
   transition: transform 0.25s ease, opacity 0.2s ease;
 }
 
+/* is-active 時: 3本線を ✕ 型に変形するアニメーション */
 .header__menu-btn.is-active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
 .header__menu-btn.is-active span:nth-child(2) {
-  opacity: 0;
+  opacity: 0; /* 中央の線を消す */
 }
 .header__menu-btn.is-active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* ドロワーメニュー本体: 初期は非表示で JS が .is-open を付けると開く */
 .header__drawer {
   display: none;
-  position: absolute;
+  position: absolute; /* ヘッダー直下に重ねて表示 */
   top: 100%;
   left: 0;
   width: 100%;
@@ -278,7 +261,7 @@ a:hover {
 }
 
 /* ============================================================
-   Footer
+   フッター
    ============================================================ */
 .footer {
   background-color: var(--bg-deepest);
@@ -360,7 +343,9 @@ a:hover {
 }
 
 /* ============================================================
-   Common Buttons
+   共通ボタン (.c-btn)
+   サイズは --primary（塗り）/ --outline（枠線）の2種類。
+   大きさは --lg / --xl で上書きする。
    ============================================================ */
 .c-btn {
   display: inline-flex;
@@ -412,7 +397,7 @@ a:hover {
   }
 }
 
-/* ===== Common Section Heading ===== */
+/* ===== 共通セクション見出し (.c-heading) ===== */
 .c-heading {
   display: flex;
   flex-direction: column;
@@ -431,6 +416,7 @@ a:hover {
   letter-spacing: 2px;
 }
 
+/* ラベルテキストの左右に横線を装飾として追加 */
 .c-heading__label::before,
 .c-heading__label::after {
   content: "";
@@ -464,7 +450,7 @@ a:hover {
   }
 }
 
-/* ===== Section base ===== */
+/* ===== セクション共通の上下余白 (.l-section) ===== */
 .l-section {
   padding: 64px 0;
 }
@@ -476,7 +462,9 @@ a:hover {
 }
 
 /* ============================================================
-   TOP PAGE - Hero (FV)
+   トップページ: ヒーロー（ファーストビュー）
+   SP: テキストが下・画像が上の縦並び（order で制御）。
+   PC: テキスト左・画像右の横並び（flex-direction: row）。
    ============================================================ */
 .hero {
   position: relative;
@@ -490,6 +478,7 @@ a:hover {
   flex-direction: column;
 }
 
+/* SP では order: 2 で画像の下にテキストを配置 */
 .hero__content {
   display: flex;
   flex-direction: column;
@@ -551,6 +540,7 @@ a:hover {
   color: var(--text-medium-2);
 }
 
+/* SP では order: 1 で画像を上に配置 */
 .hero__image {
   position: relative;
   aspect-ratio: 4 / 3;
@@ -564,6 +554,7 @@ a:hover {
   object-fit: cover;
 }
 
+/* 画像上部と下部に暗いグラデーションをかけてテキストを読みやすくする */
 .hero__image::before {
   content: "";
   position: absolute;
@@ -623,6 +614,7 @@ a:hover {
     order: 2;
   }
 
+  /* PC: 画像の左端にグラデーションをかけてテキストとの境界を自然につなぐ */
   .hero__image::after {
     content: "";
     position: absolute;
@@ -634,7 +626,7 @@ a:hover {
 }
 
 /* ============================================================
-   News (NEWS preview on top page)
+   お知らせ（トップページのプレビュー表示）
    ============================================================ */
 .news {
   background-color: var(--bg-section-3);
@@ -763,7 +755,7 @@ a:hover {
 }
 
 /* ============================================================
-   Pain Points (Section 02)
+   悩み訴求セクション
    ============================================================ */
 .pain {
   background-color: var(--bg-section-1);
@@ -862,7 +854,7 @@ a:hover {
 }
 
 /* ============================================================
-   Reasons (Section 03)
+   選ばれる理由セクション
    ============================================================ */
 .reason {
   background-color: var(--bg-section-2);
@@ -938,6 +930,7 @@ a:hover {
   object-fit: cover;
 }
 
+/* 写真下部にグラデーションをかけてラベルテキストを読みやすくする */
 .reason__photo::after {
   content: "";
   position: absolute;
@@ -1032,7 +1025,7 @@ a:hover {
 }
 
 /* ============================================================
-   Before / After (Section 04)
+   ビフォーアフターセクション
    ============================================================ */
 .ba {
   background-color: var(--bg-section-1);
@@ -1156,7 +1149,7 @@ a:hover {
 }
 
 /* ============================================================
-   Testimonials (Section 05)
+   お客様の声セクション
    ============================================================ */
 .voice {
   background-color: var(--bg-section-2);
@@ -1272,7 +1265,7 @@ a:hover {
 }
 
 /* ============================================================
-   Trainer (Section 06)
+   トレーナー紹介セクション
    ============================================================ */
 .trainer {
   background-color: var(--bg-section-1);
@@ -1405,7 +1398,7 @@ a:hover {
 }
 
 /* ============================================================
-   Pricing (Section 07)
+   料金プランセクション
    ============================================================ */
 .pricing {
   background-color: var(--bg-section-2);
@@ -1620,7 +1613,8 @@ a:hover {
 }
 
 /* ============================================================
-   FAQ (Section 08)
+   FAQ（よくある質問）セクション
+   アコーディオンの開閉は JS が .is-open を付与することで制御する。
    ============================================================ */
 .faq {
   background-color: var(--bg-section-1);
@@ -1705,6 +1699,7 @@ a:hover {
   height: 16px;
 }
 
+/* ::before が横線、::after が縦線で + アイコンを構成する */
 .faq__icon::before,
 .faq__icon::after {
   content: "";
@@ -1727,10 +1722,12 @@ a:hover {
   transform: translate(-50%, -50%);
 }
 
+/* 開いた状態では縦線を scaleY(0) で消して − アイコンにする */
 .faq__item.is-open .faq__icon::after {
   transform: translate(-50%, -50%) scaleY(0);
 }
 
+/* 回答欄: 初期非表示、.is-open が付いたら flex で表示 */
 .faq__a {
   display: none;
   padding: 18px 20px;
@@ -1805,7 +1802,7 @@ a:hover {
 }
 
 /* ============================================================
-   Final CTA (Section 09)
+   最終 CTA セクション
    ============================================================ */
 .final {
   background: linear-gradient(to bottom, #0f0803, var(--bg-darker));
@@ -1927,7 +1924,7 @@ a:hover {
 }
 
 /* ============================================================
-   Access (Section 10)
+   店舗情報・アクセスセクション
    ============================================================ */
 .access {
   background-color: var(--bg-section-2);
@@ -2059,7 +2056,7 @@ a:hover {
 }
 
 /* ============================================================
-   Counseling page
+   カウンセリングページ (counseling.html)
    ============================================================ */
 .cns-hero {
   background-color: var(--bg-darker);
@@ -2153,7 +2150,7 @@ a:hover {
   }
 }
 
-/* Counseling - Trust badges */
+/* カウンセリング - 安心ポイント（4つのバッジ） */
 .cns-trust {
   background-color: var(--bg-section-4);
   padding: 40px 0;
@@ -2223,7 +2220,7 @@ a:hover {
   }
 }
 
-/* Counseling - Steps */
+/* カウンセリング - 来店までの流れ（ステップ） */
 .cns-steps {
   background-color: var(--bg-darker);
   padding: 56px 0;
@@ -2339,7 +2336,7 @@ a:hover {
   }
 }
 
-/* Counseling - Form */
+/* カウンセリング - 予約フォーム */
 .cns-form-section {
   background-color: var(--bg-section-4);
   padding: 56px 0;
@@ -2575,7 +2572,7 @@ a:hover {
 }
 
 /* ============================================================
-   Thanks page
+   サンクスページ (thanks.html)
    ============================================================ */
 .thanks-success {
   background-color: var(--bg-darker);
@@ -2825,7 +2822,7 @@ a:hover {
 }
 
 /* ============================================================
-   News list page
+   お知らせ一覧ページ (news.html)
    ============================================================ */
 .news-page-hero {
   background-color: #171717;
@@ -2969,7 +2966,7 @@ a:hover {
   }
 }
 
-/* News grid */
+/* お知らせ投稿グリッド */
 .news-archive {
   background-color: var(--bg-section-1);
   padding: 40px 0;
@@ -3069,7 +3066,7 @@ a:hover {
   color: var(--accent);
 }
 
-/* Pagination */
+/* ページネーション */
 .news-pagination {
   display: flex;
   justify-content: center;
@@ -3133,7 +3130,8 @@ a:hover {
   }
 }
 
-/* ===== Utility ===== */
+/* ===== ユーティリティ ===== */
+/* スクリーンリーダー専用テキスト（視覚的には非表示、アクセシビリティ目的） */
 .is-sr-only {
   position: absolute;
   width: 1px;

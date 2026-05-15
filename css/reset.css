@@ -1,32 +1,44 @@
-/* ===== CSS Reset ===== */
+/* ===========================================================
+   CSSリセット
+   ブラウザ間のスタイル差異をなくし、一貫したベースを作る。
+   =========================================================== */
+
+/* すべての要素のボックスサイズを border-box に統一
+   padding や border を width/height の内側に含める */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* スマホでのフォントサイズ自動拡大を無効化
+   タップ時のハイライト（青い枠）も非表示に */
 html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
 
+/* ブラウザデフォルトの余白をリセット */
 body,
 h1, h2, h3, h4, h5, h6,
 p, figure, blockquote, dl, dd {
   margin: 0;
 }
 
+/* リストの余白と点（・）をリセット */
 ul, ol {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+/* リンクの色継承・下線なし */
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/* ボタンのブラウザデフォルトスタイルをリセット */
 button {
   font: inherit;
   color: inherit;
@@ -36,6 +48,7 @@ button {
   cursor: pointer;
 }
 
+/* フォーム要素のブラウザデフォルトスタイルをリセット */
 input,
 textarea,
 select {
@@ -46,6 +59,8 @@ select {
   outline: none;
 }
 
+/* 画像・動画・SVG をブロック要素にして余白をなくす
+   max-width: 100% で親要素からはみ出ないようにする */
 img,
 picture,
 video,
@@ -55,6 +70,7 @@ svg {
   height: auto;
 }
 
+/* テーブルの隣接セル間の二重罫線をなくす */
 table {
   border-collapse: collapse;
 }
