@@ -6,7 +6,7 @@
 
 ## デモ
 
-🔗 **[ライブデモを見る](https://toa30773-debu.github.io/student-gym-lp/)**
+🔗 **[ライブデモを見る](https://toa30773.github.io/student-gym-lp/)**
 
 **LP（メインページ）**
 | PC版（1440px） | SP版（375px） |
