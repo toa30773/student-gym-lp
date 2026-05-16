@@ -51,6 +51,8 @@ Figmaでデザイン（Claude Codeを使用）
   ↓
 コーディング（Claude Codeを使用）
   ↓
+画像最適化（WebP変換）
+  ↓
 ブラウザ確認・調整
   ↓
 GitHub Pages 公開
@@ -103,6 +105,7 @@ GitHub Pages 公開
 | HTML5 | セマンティックマークアップ |
 | CSS3 | BEM / SPファースト / カスタムプロパティ |
 | Vanilla JavaScript | フレームワーク・ライブラリ不使用 |
+| Node.js（sharp） | WebP一括変換 |
 | Figma | UIデザイン（PC・SPフレーム） |
 | Claude Code | デザイン生成・コーディング支援 |
 | GitHub Pages | ホスティング |
@@ -137,4 +140,4 @@ student-gym-lp/
 
 ---
 
-*© 2026 Portfolio Work by toa*
+*Portfolio Work*
